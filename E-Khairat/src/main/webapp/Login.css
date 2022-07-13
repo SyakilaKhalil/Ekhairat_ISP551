@@ -1,0 +1,124 @@
+body{
+	background-color: #F4F0F0;
+}
+
+
+.logo{
+	display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 33%;
+}
+
+.button{
+justify-content: center;
+margin-top: 5px;
+}
+.align{
+	margin-left: 42%;
+}
+
+.nextalign{
+	margin-left: 5%;
+}
+
+.check{
+  	cursor: pointer;
+  	font-size: 18px;
+  	padding-top: 2%;
+    color: #0000EE;
+}
+
+.checkbox{
+  	height: 15px;
+  	width: 15px;
+}
+
+.checkbox:hover{
+	background-color: red;
+}
+
+.typemem{
+	font-size: 22px;
+	font-weight: bold;
+  text-align: center;
+	text-decoration: underline;
+}
+
+.login {
+	margin: auto;
+width: 60%;
+padding: 10px;
+}
+
+.logintext{
+  padding-left: 150px;
+  display:inline-block;
+  overflow: hidden;
+	font-size: 19px;
+
+	
+}
+
+.userbox{
+	margin-left: 50px;
+	width: 30%;
+	height: 30px;
+	border-radius: 10px;
+	border: 3px solid #00b300;
+  	background-color:#e6ffe6;
+}
+
+.passbox{
+  margin-left: 53px;
+	width: 30%;
+	height: 30px;
+	border-radius: 10px;
+	border: 3px solid #00b300;
+  	background-color:#e6ffe6;
+}
+
+.margin{
+	margin-top: 20px;
+}
+
+.btnlogin {
+  background-color: #86A86C;
+  color: white;
+  padding: 12px;
+   margin-left:auto; 
+  margin-right:auto; 
+  margin-top:30px; 
+  overflow: hidden;
+  display:block;
+  border: none;
+  padding: 8px 48.3px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.btnlogin:hover {
+  background-color: lightslategrey;
+}
+
+.regis{
+  background-color: #CA8989;
+  color: white;
+  padding: 8px 48.3px;
+  margin-left:auto; 
+  margin-right:auto; 
+  margin-top:12px; 
+  overflow: hidden;
+  display:block;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.regis:hover {
+  background-color: lightslategrey;
+}
