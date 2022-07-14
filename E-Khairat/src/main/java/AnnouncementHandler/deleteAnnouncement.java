@@ -20,7 +20,7 @@ import javax.servlet.http.HttpSession;
 public class deleteAnnouncement extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	PreparedStatement ps = null;
-    HttpSession session = null;
+    HttpSession session = null; 
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -57,8 +57,6 @@ public class deleteAnnouncement extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-	}
 
-	
 
 }
