@@ -1,0 +1,215 @@
+@charset "ISO-8859-1";
+body{
+  background-color: #F4F0F0;
+}
+
+.header{
+  border: 5px;
+  background-color:#FFFFF0; 
+  display: flex;
+  justify-content: center;
+  border-radius: 30px;
+}
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  display: -ms-flexbox; 
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+  margin-bottom: 3%;
+}
+
+.col-50 {
+  -ms-flex: 50%; 
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; 
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.containercart {
+  padding: 5px 20px 15px 20px;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea{
+  width: 100%;
+  padding: 12px;
+  border: 3px solid #00b300;
+  background-color:#e6ffe6;
+  border-radius: 5px;
+}
+
+input[type=password]{
+	width: 50%;
+	border: 3px solid #00b300;
+  background-color:#e6ffe6;
+	border-radius: 5px;
+	padding: 12px;
+  margin-left: 50px;
+}
+
+.extratext{
+	margin-bottom: 30px;
+	margin-top: 0px;
+}
+
+label.regis {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.btncart {
+  background-color: #86A86C;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 15%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+  float: right;
+  margin-right: 10%;
+}
+
+.btncart:hover {
+  background-color: lightslategrey;
+}
+
+a.regis {
+  color: #2196F3;
+}
+
+hr.regis {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+
+@media (max-width: 800px) {
+  .box {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+} 
+
+.bottomline {
+  border-bottom: 1pt solid #e0e0d1;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) * -.5);
+    margin-left: calc(var(--bs-gutter-x) * -.5);
+}
+
+.infobox{
+  background-color:   #C0C0C0;
+  border-radius: 10px;
+  margin: 50px;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+
+.infotext {
+  margin-left: 40px;
+  font-size: 25px;
+}
+
+#passlabel {
+  margin-left: 50px;
+}
+
+.header {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 0px;
+  font-family: Garamond, serif;
+  font-size: 50px;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+footer {
+  background-color: lightgrey;
+  position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+}
+
+.backbtn{
+  background-color: #CA8989;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 15%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+  float: left;
+  margin-left: 10%;
+}
+
+.backbtn:hover {
+  background-color: lightslategrey;
+}
+
+
+   .valid {
+
+    color: rgb(3, 184, 190);
+
+  }
+
+  .valid:before {
+
+    position: relative;
+
+    left: -35px;
+
+    content: "&#10004;";
+
+  }
+
+  .invalid {
+
+    color: red;
+
+  }
+
+  .invalid:before {
+
+    position: relative;
+
+    left: -35px;
+
+    content: "&#10006;";
+
+  }
