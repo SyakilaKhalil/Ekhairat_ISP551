@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Login Page</title>
-	<link rel="stylesheet" href="loginpage.css">
+	<link rel="stylesheet" href="Login.css">
 </head>
 <body>
 <input type="hidden" id="status" value="<%= request.getAttribute("status") %>">
