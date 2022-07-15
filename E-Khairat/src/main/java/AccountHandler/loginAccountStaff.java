@@ -65,7 +65,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			session.setAttribute("name", result.getString("staffname"));
 			
 			//request dispatcher - if login successful
-			dispatcher = request.getRequestDispatcher("HOMEPAGE_MEMBER.jsp");
+			dispatcher = request.getRequestDispatcher("HOMEPAGE_STAFF.jsp");
 		}
 		else {
 			request.setAttribute("status", "failed");

@@ -42,7 +42,6 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		String dbUrl = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com/dd29m58g7a4tda";
 		String username = "qekmfhbqusidva";
 		String password = "22cff620d0b06f17950d4f4669a1e0f11f168c04053c0a218b1d83ee130fddb9";
-		String action = request.getParameter("action");
 		try {
 			Class.forName("org.postgresql.Driver");
 			Connection connection = DriverManager.getConnection(dbUrl,username,password);
