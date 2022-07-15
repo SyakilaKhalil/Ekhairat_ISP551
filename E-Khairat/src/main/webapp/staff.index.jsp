@@ -14,7 +14,7 @@
 	<div>
 		<img class="logo" src="Surau Al-Hidayah1.png">
 	</div>
-	<form method="post" action="loginstaff" >
+	<form method="post" action="loginAccountStaff" >
 		<label class="check align" for="khairat">Khairat</label>
 		<input class = "checkbox" type="radio" id="khairat" name="khairatormember" onclick="window.location.href='index.jsp';">
 		<label class="check nextalign" for="staff">Staff</label>
