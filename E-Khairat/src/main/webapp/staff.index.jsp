@@ -32,7 +32,7 @@
 
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="js/main.js"></script>
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.jsp"></script>
+	 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.jsp"></script>
 	
 	<script type="text/javascript">
 		var status = document.getElementById("status").value;
