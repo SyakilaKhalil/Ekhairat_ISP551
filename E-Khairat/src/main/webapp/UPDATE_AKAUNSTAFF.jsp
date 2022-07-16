@@ -19,18 +19,18 @@ table, th, td {
   border-radius:2px;
 }
 table {
+table-layout: fixed;
   width: 90%;
-  margin-left:30px;
+   margin-left:30px;
+   margin-right:30px;
   margin-top:40px;
   font-size:18;
-  background: white;
-  border-colour:;
 }
 input{
- width: 70%;
-margin-left:150px;
-align-item:left;
-border:0px solid ;
+ width: 100%;
+border:1px  #f4a460;
+ font-family: serif, Helvetica; 
+ font-size:18;
 }
 th,
 td {
@@ -64,16 +64,13 @@ td {
                 <b><a id="linkin" onclick="window.location.href='AKAUN_STAFF.jsp';">AKAUN PENGGUNA</a></b>
             </li>
             <li id="link">
-                <b><a id="linkin" onclick="window.location.href='.jsp';">LAPORAN</a></b>
+                <b><a id="linkin" onclick="window.location.href='laporan.jsp';">LAPORAN</a></b>
             </li>
             <li id="link">
                 <b><a id="linkin" onclick="window.location.href='penggesahan_bayaran.jsp';">PENGESAHAN PEMBAYARAN</a></b>
             </li>
             <li id="link">
-                <b><a id="linkin" onclick="window.location.href='.jsp';">PENERIMAAN KHAIRAT</a></b>
-            </li>
-            <li id="link">
-                <b><a id="linkin" onclick="window.location.href='.jsp';">PENGURUSAN AKTIVITI</a></b>
+                <b><a id="linkin" onclick="window.location.href='.jsp';">KHAIRAT</a></b>
             </li>
             <li id="log" class="log">
                 <b><a id="linkin" onclick="window.location.href='staff.index.jsp';">LOG KELUAR</a></b>

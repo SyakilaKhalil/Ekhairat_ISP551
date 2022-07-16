@@ -16,7 +16,20 @@ text-align:center;
     color: #fff;
     border:none;
     border-radius:10px;
+    padding:8px;
+   }
+.btn{
+    background-color:red;
+    color: #fff;
+    border:none;
+    border-radius:10px;
+    padding:8px;
+   }
+textarea{
+width:300px;
+hight:250px;
 }
+
 </style>
 <body>
 <div class="umum">
@@ -24,12 +37,14 @@ text-align:center;
 <br>
 <form action="createAnnouncement" method="post" onsubmit="time()">
 	<label for="announce"></label>
-	<textarea rows = "5" cols = "60" id="announce" name="announceDetail" placeholder = "pengumuman"></textarea>
+	<textarea rows = "5" cols = "60" id="announce" name="announceDetail" placeholder = "Sila tulis pengumuman..."></textarea>
+	<br>
 	<input type="hidden" name="action" value="createAnnounce">
 	<input class="button" type="submit" value="Hantar"/>
 	</form>
-	
+	<div class="btn">
 	<a id="linkin" onclick="window.location.href='HOMEPAGE_STAFF.jsp';">KEMBALI</a>
+	</div>
 	</div>
 </body>
 </html>
