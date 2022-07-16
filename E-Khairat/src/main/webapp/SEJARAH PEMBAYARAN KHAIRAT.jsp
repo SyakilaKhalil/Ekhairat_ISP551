@@ -17,6 +17,17 @@
 <title>Sejarah Pembayaran Khairat</title>
 <link rel="stylesheet" href="style.css">
 </head>
+<style>
+th,tr,td{
+text-align: center;
+}
+table{
+width:80%;
+ border-collapse: collapse;
+  border-radius: 1em;
+  overflow: hidden;
+}
+</style>
 <body>
 	<header>
 		<div class="topheader"></div>
