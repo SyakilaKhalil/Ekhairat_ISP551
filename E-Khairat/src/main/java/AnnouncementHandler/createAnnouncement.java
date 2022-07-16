@@ -54,7 +54,6 @@ public class createAnnouncement extends HttpServlet {
 			case "createAnnounce": 
 				createAnnounce(request,response);
 			break;
-		
 			}
 		}
 		catch (SQLException e) {
