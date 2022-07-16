@@ -18,6 +18,9 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <style>
+div.sejarah{
+padding-left:120;
+}
 th,tr,td{
 text-align: center;
 }
