@@ -33,15 +33,14 @@ public class deleteAnnouncement extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com/dd29m58g7a4tda";
-		 String user = "qekmfhbqusidva";
-		 String pass = "22cff620d0b06f17950d4f4669a1e0f11f168c04053c0a218b1d83ee130fddb9";
-		
-
+		 
+		String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com/dd29m58g7a4tda";
+		String user = "qekmfhbqusidva";
+		String pass = "22cff620d0b06f17950d4f4669a1e0f11f168c04053c0a218b1d83ee130fddb9";
 		String announceID= request.getParameter("id");
 		
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Class.forName("org.postgresql.Driver");
 			Connection connection = DriverManager.getConnection(dbURL,user,pass);
 			ps = connection.prepareStatement("DELETE FROM announcement WHERE announceid=?");
 			

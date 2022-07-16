@@ -81,7 +81,7 @@
                 <td><%=rs.getString(2)%></td>
                 <td><%=rs.getString(3)%></td>
                 <td><%=rs.getString(4)%></td>
-                <td><a href="deleteannounce?id=<%=rs.getInt(5)%>">Buang Pengumuman</a></td>
+                <td><a href="deleteannounce?id=<%=rs.getString(5)%>">Buang Pengumuman</a></td>
             </tr>
             <%
                 }
