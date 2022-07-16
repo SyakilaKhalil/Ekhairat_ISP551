@@ -20,7 +20,7 @@ display: flex;
   align-items: center;
 }
 table{
-float-right:90%;
+width:50%;
 }
 </style>
 <body>
