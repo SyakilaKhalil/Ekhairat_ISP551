@@ -79,7 +79,7 @@ public class uploadkhairatpayment extends HttpServlet {
 			
 			try {
 				Class.forName("oracle.jdbc.driver.OracleDriver");
-				Connection connection = DriverManager.getConnection(dbURL,username,password);
+				Connection connection = DriverManager.getConnection(dbURL,user,pass);
 				String sql = "insert into khairatpayment(paymentdetail,path,datentime, memberid) values (?,?,?,?)";
 				ps = connection.prepareStatement(sql);
 				ps.setString(1, paymentDetail);
