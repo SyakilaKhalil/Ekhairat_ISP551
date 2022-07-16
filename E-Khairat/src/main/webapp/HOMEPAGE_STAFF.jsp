@@ -15,9 +15,8 @@
 <script src="testingpopup.js"></script>
 </head>
 <style>
-infoSemasa{
-display: flex;
-  align-items: center;
+div.infoSemasa{
+padding-left: 80px;
 }
 table{
 width:80%;
