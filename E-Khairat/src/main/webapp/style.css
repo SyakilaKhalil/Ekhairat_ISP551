@@ -98,7 +98,7 @@ div.scroll , div.scroll1{
     text-align:justify;
 }
 #container-outer{
-  background:#cdebf9; 
+  background:white; 
   height:400px; 
   width:600px; 
   display:flex; 
@@ -347,7 +347,7 @@ ul.bar1{
 
 
 #container-outer2{
-  background:#cdebf9; 
+  background:white; 
   height:400px; 
   width:1510px; 
   display:flex; 
@@ -357,7 +357,7 @@ ul.bar1{
 }  
 
 #container-outer3{
-  background:#cdebf9; 
+  background:white; 
   height:400px; 
   width:1500px; 
   display:flex; 
@@ -367,7 +367,7 @@ ul.bar1{
 }  
 
 #container-outer4{
-  background:#cdebf9; 
+  background:white; 
   height:500px; 
   width:1500px; 
   display:flex; 
@@ -377,7 +377,7 @@ ul.bar1{
 }  
 
 #container-outer5{
-  background:#cdebf9; 
+  background:white; 
   height:500px; 
   width:800px; 
   display:flex; 
