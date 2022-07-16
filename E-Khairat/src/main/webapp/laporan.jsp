@@ -77,7 +77,7 @@
 					<br>
 					<div class="button">
 						<li id="link1">
-						<b><a id="linkin" href="">PAPAR LAPORAN</a></b>
+						<b><a id="linkin" onclick="window.location.href='paparLaporan.jsp';">PAPAR LAPORAN</a></b>
 					</li>
 					</div>
 		</div>
