@@ -55,9 +55,6 @@ width:80%;
             <li id="link">
                 <b><a id="linkin" onclick="window.location.href='.jsp';">PENERIMAAN KHAIRAT</a></b>
             </li>
-            <li id="link">
-                <b><a id="linkin" onclick="window.location.href='pengurusan_aktiviti.jsp';">PENGURUSAN AKTIVITI</a></b>
-            </li>
             <li id="log" class="log">
                 <b><a id="linkin" onclick="window.location.href='staff.index.jsp';">LOG KELUAR</a></b>
             </li>
