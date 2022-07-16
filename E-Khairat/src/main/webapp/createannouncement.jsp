@@ -9,14 +9,12 @@
 <style>
 
 .button{
- position: absolute;
-    top:50%;
     background-color:#ACD1AF;
     color: #fff;
     border:none;
     border-radius:10px;
 }
-.umum{
+div.umum{
 align:center;
 background-colour:#ffe699;
 }
@@ -28,7 +26,6 @@ background-colour:#ffe699;
 <form action="createAnnouncement" method="post" onsubmit="time()">
 	<label for="announce"></label>
 	<textarea rows = "5" cols = "60" id="announce" name="announceDetail" placeholder = "pengumuman"></textarea>
-	<br>
 	<input type="hidden" name="action" value="createAnnounce">
 	<input class="button" type="submit" value="Hantar"/>
 	</form>
