@@ -30,6 +30,9 @@ width:80%;
   border-radius: 1em;
   overflow: hidden;
 }
+h1{
+align:center;
+}
 </style>
 <body>
 	<header>
@@ -50,8 +53,8 @@ width:80%;
 				<b><a id="linkin" onclick="window.location.href='index.jsp';">LOG KELUAR</a></b>
 			</li>
 			</ul>
-
-			<div class="sejarah"><h1>SEJARAH PEMBAYARAN KHAIRAT</h1>
+			<h1>SEJARAH PEMBAYARAN KHAIRAT</h1>
+			<div class="sejarah">
 				<%!
             Connection con = null;
             PreparedStatement ps = null;
