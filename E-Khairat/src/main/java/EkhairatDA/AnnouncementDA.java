@@ -24,7 +24,7 @@ public class AnnouncementDA {
 	public static Connection getConnection() {
         Connection con = null;
         try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
+            Class.forName("org.postgresql.Driver");
             con = DriverManager.getConnection(dbURL, user, pass);
         } catch (SQLException e) {
             // TODO Auto-generated catch block
