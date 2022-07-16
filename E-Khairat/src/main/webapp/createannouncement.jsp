@@ -6,12 +6,27 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style>
+body{
+align:center;
+}
+button{
+ position: absolute;
+    top:50%;
+    background-color:#ACD1AF;
+    color: #fff;
+    border:none;
+    border-radius:10px;
+}
+</style>
 <body>
+<h2>PENGUMUMAN</h2>
+<br>
 <form action="createAnnouncement" method="post" onsubmit="time()">
-	<label for="announce">pengumuman</label>
+	<label for="announce"></label>
 	<textarea rows = "5" cols = "60" id="announce" name="announceDetail" placeholder = "pengumuman"></textarea>
 	<input type="hidden" name="action" value="createAnnounce">
-	<input class="button" type="submit">
+	<input class="button" type="submit" value="Hantar"/>
 	</form>
 	<a id="linkin" onclick="window.location.href='pengurusan_aktivti.jsp';">KEMBALI</a>
 </body>

@@ -16,7 +16,7 @@
 </head>
 <style>
 div.infoSemasa{
-padding-left: 90px;
+padding-left: 120px;
 }
 th,tr{
 text-align: center;
