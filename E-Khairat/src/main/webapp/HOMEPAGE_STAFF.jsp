@@ -16,7 +16,7 @@
 </head>
 <style>
 div.infoSemasa{
-padding-left: 80px;
+padding-left: 90px;
 }
 table{
 width:80%;
