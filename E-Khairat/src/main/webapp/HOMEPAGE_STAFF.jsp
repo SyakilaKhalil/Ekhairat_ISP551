@@ -19,6 +19,9 @@ infoSemasa{
 display: flex;
   align-items: center;
 }
+table{
+float-right:90%;
+}
 </style>
 <body>
 <%
