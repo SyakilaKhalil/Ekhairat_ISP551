@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="createAnnouncement" method="post" onsubmit="time()">
+<form action="createAnnounce" method="post" onsubmit="time()">
 	<label for="announce">pengumuman</label>
 	<textarea rows = "5" cols = "60" id="announce" name="announceDetail" placeholder = "pengumuman"></textarea>
 	<input type="hidden" name="action" value="createAnnounce">
