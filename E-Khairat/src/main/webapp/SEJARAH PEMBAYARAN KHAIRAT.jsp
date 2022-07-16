@@ -31,9 +31,9 @@ width:80%;
   overflow: hidden;
 }
 h1{
-padding-left:100px;
+padding-left: 20px;
 color:black;
-font-size:40px;
+font-size:36px;
 }
 </style>
 <body>
