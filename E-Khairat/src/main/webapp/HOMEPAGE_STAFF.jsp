@@ -21,6 +21,9 @@ display: flex;
 }
 table{
 width:80%;
+ border-collapse: collapse;
+  border-radius: 1em;
+  overflow: hidden;
 }
 </style>
 <body>
@@ -72,6 +75,7 @@ width:80%;
         %>
         <br><br><br>
         <div class="scroll">
+        <br><br>
 		<form action="uploadkhairatpayment" method="post">
         <input type=hidden name="staffid"  value="${staffid}">
         <div class="infoSemasa">
@@ -89,7 +93,6 @@ width:80%;
             <tr>
             	<td><%=rs.getTimestamp(1)%></td>
                 <td><%=rs.getString(2)%></td>
-                <td><%=rs.getString(3)%></td>
                 <td><%=rs.getString(4)%></td>
                 <td><a href="deleteAnnouncement?id=<%=rs.getString(5)%>">Buang Pengumuman</a></td>
             </tr>
