@@ -33,6 +33,7 @@ width:80%;
 h1{
 align:center;
 color:black;
+font-size:28;
 }
 </style>
 <body>
