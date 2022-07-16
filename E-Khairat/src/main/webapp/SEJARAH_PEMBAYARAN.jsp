@@ -26,6 +26,7 @@
 				<b><a id="linkin" onclick="window.location.href='loginpage.jsp';">LOG KELUAR</a></b>
 			</li>
 		</ul>
+		<br><br>
 	    <div id="container-outer">
 	    <ul class="bar1">
 			<li id="link1">
