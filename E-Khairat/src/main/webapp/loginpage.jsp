@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Login Page</title>
-	<link rel="stylesheet" href="Login.css">
+	<link rel="stylesheet" href="loginpage.css">
 </head>
 <body>
 	<input type="hidden" id="status" value="<%=request.getAttribute("status")%>">
 	<div>
 		<img class="logo" src="Surau Al-Hidayah1.png">
 	</div>
-	<form method="post" action="loginAccountMember">
+	<form method="post" action="loginmember">
 		<label class="check align" for="khairat">Khairat</label>
 		<input class = "checkbox" type="radio" id="khairat" name="khairatorstaff">
 		<label class="check nextalign" for="staff">Staff</label>

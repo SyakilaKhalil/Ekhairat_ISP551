@@ -1,5 +1,6 @@
 package AccountHandler;
 
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,23 +16,28 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class loginAccount
+ * Servlet implementation class loginstaff
  */
-@WebServlet("/loginAccountMember")
-public class loginAccountMember extends HttpServlet {
+@WebServlet("/loginstaff")
+public class loginstaff extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public loginAccountMember() {
+    public loginstaff() {
         super();
         // TODO Auto-generated constructor stub
     }
-protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		
-		String memberid = request.getParameter("nomborkp");
-		String memberpassword = request.getParameter("pass");
+		String staffid = request.getParameter("nomborkp");
+		String staffpassword = request.getParameter("pass");
 		
 		//Create session
 		HttpSession session = request.getSession();
@@ -39,9 +45,10 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		//request dispatcher
 		RequestDispatcher dispatcher = null;
 		
-		String dbUrl = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com/dd29m58g7a4tda";
-		String username = "qekmfhbqusidva";
-		String password = "22cff620d0b06f17950d4f4669a1e0f11f168c04053c0a218b1d83ee130fddb9";
+		String dbUrl = "jdbc:postgresql://ec2-52-73-184-24.compute-1.amazonaws.com/dckqi5pj1ki93c";
+		String username = "olkzesmgaifpnp";
+		String password = "e13b8bdf28023c60fd1bfde4b54a707571b971a82e85d244b7871afc806f26ed";
+		
 		try {
 			Class.forName("org.postgresql.Driver");
 			Connection connection = DriverManager.getConnection(dbUrl,username,password);
@@ -49,31 +56,26 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			
 			
 			//SQL Statement/Query 
-			PreparedStatement pst = connection.prepareStatement("select * from khairatmember where memberid = ? and memberpassword = ?");
+			PreparedStatement ps = connection.prepareStatement("select * from khairatstaff where staffid = ? and staffpassword = ?");
 			
 			// Set string - set for ? by order
-			pst.setString(1, memberid);
-			pst.setString(2, memberpassword);
+			ps.setString(1, staffid);
+			ps.setString(2, staffpassword);
 			
 			// Execute Query Method
-			ResultSet result = pst.executeQuery();
+			ResultSet result = ps.executeQuery();
 			
 			// if result has data
 			if(result.next()) {
 				//will redirect to homepage
-				session.setAttribute("name", result.getString("membername"));
-				session.setAttribute("id", result.getString("memberid"));
-				session.setAttribute("contact", result.getString("membercontactno"));
-				session.setAttribute("address", result.getString("memberaddress"));
-				session.setAttribute("email", result.getString("memberemail"));
-				session.setAttribute("password", result.getString("memberpassword"));
+				session.setAttribute("name", result.getString("staffname"));
 				
 				//request dispatcher - if login successful
 				dispatcher = request.getRequestDispatcher("HOMEPAGE_MEMBER.jsp");
 			}
 			else {
 				request.setAttribute("status", "failed");
-				dispatcher = request.getRequestDispatcher("index.jsp");
+				dispatcher = request.getRequestDispatcher("staff.index.jsp");
 			}
 			
 			dispatcher.forward(request, response);
@@ -85,6 +87,4 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			e.printStackTrace();
 		}
 	}
-	
-
 }

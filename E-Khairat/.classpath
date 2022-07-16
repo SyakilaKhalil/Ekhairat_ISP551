@@ -19,17 +19,17 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/syaki/Downloads/standard.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/syaki/Downloads/jstl.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/syaki/Downloads/ojdbc11.jar">
+	<classpathentry kind="lib" path="C:/Users/syaki/Downloads/mysql-connector.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/syaki/Downloads/standard.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
