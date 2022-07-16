@@ -78,7 +78,7 @@ public class uploadkhairatpayment extends HttpServlet {
 			Files.copy(is, Paths.get(uploadPath + File.separator + paymentDetail), StandardCopyOption.REPLACE_EXISTING);
 			
 			try {
-				Class.forName("oracle.jdbc.driver.OracleDriver");
+				Class.forName("org.postgresql.Driver");
 				Connection connection = DriverManager.getConnection(dbURL,user,pass);
 				String sql = "insert into khairatpayment(paymentdetail,path,datentime, memberid) values (?,?,?,?)";
 				ps = connection.prepareStatement(sql);

@@ -14,6 +14,12 @@
 <link rel="stylesheet" href="style.css">
 <script src="testingpopup.js"></script>
 </head>
+<style>
+infoSemasa{
+display: flex;
+  align-items: center;
+}
+</style>
 <body>
 <%
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
@@ -65,6 +71,7 @@
         <div class="scroll">
 		<form action="uploadkhairatpayment" method="post">
         <input type=hidden name="staffid"  value="${staffid}">
+        <div class="infoSemasa">
         <table border="2">
             <tr>
                 <th>Date And Time</th><th>Pengumuman</th><th>Staffid</th><th>StaffName</th>
@@ -88,6 +95,7 @@
             %>
             
         </table>
+        </div>
         </form>
 			</div>
     </header>
