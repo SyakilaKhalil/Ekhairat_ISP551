@@ -33,6 +33,8 @@
 			</ul>
 			<form action="uploadkhairatpayment" method="post" enctype="multipart/form-data">
 			<h1 id = "muatnaik">MUAT NAIK BUTIRAN TRANSAKSI</h1>
+<br>
+<br>
 
  			 <div class="button center">
  			 	<td>Upload File</td>

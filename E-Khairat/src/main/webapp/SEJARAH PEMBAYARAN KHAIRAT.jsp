@@ -32,6 +32,7 @@ width:80%;
 }
 h1{
 align:center;
+color:black;
 }
 </style>
 <body>
