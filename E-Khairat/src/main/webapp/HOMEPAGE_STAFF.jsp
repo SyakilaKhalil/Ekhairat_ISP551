@@ -83,7 +83,8 @@ width:80%;
         <div class="infoSemasa">
         <table border="2">
             <tr>
-                <th>Date And Time</th><th>Pengumuman</th><th>StaffName</th>
+                <th>Date And Time</th><th>Pengumuman</th><th>StaffName</th>Buang Pengumuman<th
+                
             </tr>
             <%
             con = DB.getConnection();
@@ -96,7 +97,7 @@ width:80%;
             	<td><%=rs.getTimestamp(1)%></td>
                 <td><%=rs.getString(2)%></td>
                 <td><%=rs.getString(4)%></td>
-                <td><a href="deleteAnnouncement?id=<%=rs.getString(5)%>">Buang Pengumuman</a></td>
+                <td><a href="deleteAnnouncement?id=<%=rs.getString(5)%>">Buang</a></td>
             </tr>
             <%
                 }
