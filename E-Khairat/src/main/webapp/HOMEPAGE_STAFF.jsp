@@ -83,7 +83,7 @@ width:80%;
         <div class="infoSemasa">
         <table border="2">
             <tr>
-                <th>Date And Time</th><th>Pengumuman</th><th>StaffName</th>Buang Pengumuman<th
+                <th>Date & Time</th><th>Pengumuman</th><th>Staff Name</th><th>Buang Pengumuman</th>
                 
             </tr>
             <%
