@@ -24,12 +24,10 @@ table-layout: fixed;
   margin-left:30px;
   margin-top:40px;
   font-size:18;
-  background: white;
   border-colour:;
 }
 input{
  width: 100%;
-border:1px  #f4a460;
  font-family: serif, Helvetica; 
  font-size:18;
 }
