@@ -23,7 +23,7 @@ text-align:center;
     color: #fff;
     border:none;
     border-radius:10px;
-    padding:8px 10px;
+    padding: 2px;
    }
 textarea{
 width: 300px;
