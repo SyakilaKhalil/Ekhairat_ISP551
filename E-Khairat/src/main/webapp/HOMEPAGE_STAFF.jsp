@@ -107,6 +107,7 @@ width:80%;
         </div>
         </form>
 			</div>
+			<br>
 			<div id="reka">
 			<button class="reka" onclick="window.location.href='createannouncement.jsp';">REKA PENGUMUMAN</button>
 			</div>
