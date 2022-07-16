@@ -14,10 +14,7 @@
 </head>
 <style>
 
-table, th, td {
-  border: 1px solid  #f4a460;
-  border-radius:2px;
-}
+
 table, th, td {
   border: 1px solid  #f4a460;
   border-radius:2px;
@@ -29,8 +26,7 @@ table-layout: fixed;
    margin-right:30px;
   margin-top:40px;
   font-size:18;
-  background: white;
-  border-colour:;
+  background-color: white;
 }
 input{
  width: 100%;
