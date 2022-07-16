@@ -6,8 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import Ekhairat.Javabean.Khairatmember;
+
 
 
 
@@ -73,5 +76,29 @@ public class KhairatMemberDA {
 					return rowUpdated;
 		}
 
+		public List<Khairatmember> selectAllKhairatMember(){
+			List<Khairatmember> mem = new ArrayList<Khairatmember>();
+			Connection con = DB.getConnection();
+			Statement st;
+			try 
+			{		
+				st = con.createStatement();
+				ResultSet rs = st.executeQuery("Select * from khairatmember order by memberid");
+				
+				while(rs.next()){
+					Khairatmember i = new Khairatmember();
+					i.setmemberName(rs.getString("membername"));
+					i.setmemberID(rs.getString("memberid"));
+					i.setmemberContactNo(rs.getString("membercontactno"));
+					i.setmemberEmail(rs.getString("memberemail"));
+					i.setmemberAddress(rs.getString("memberaddress"));
+					mem.add(i);
+			}
+			con.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+			return mem;
+		}
 
 }
