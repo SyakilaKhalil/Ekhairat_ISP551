@@ -88,7 +88,7 @@ td {
 	    <br><br><br>
 	    <div class="scroll">
 
-	    	<form action="KhairatstaffHandler" method="post">
+	    	<form action="updateStaffAccount" method="post">
 
 <div class="container" style="height: auto">
 

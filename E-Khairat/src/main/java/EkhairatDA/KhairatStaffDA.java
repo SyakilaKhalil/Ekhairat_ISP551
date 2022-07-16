@@ -56,8 +56,8 @@ public class KhairatStaffDA {
      public boolean updateKhairatstaff(Khairatstaff sta) throws SQLException{
 		
 		boolean rowUpdated;
-		try (Connection connection= getConnection();
-				PreparedStatement statement =connection.prepareStatement("UPDATE khairatstaff set staffname=?,staffcontactno=?,staffaddress=?,staffemail=?,staffpassword=? where staffid=?");){
+		try (Connection con= getConnection();
+				PreparedStatement statement =con.prepareStatement("UPDATE khairatstaff set staffname=?,staffcontactno=?,staffaddress=?,staffemail=?,staffpassword=? where staffid=?");){
 					statement.setString(1, sta.getstaffName());
 		            statement.setString(2, sta.getstaffContactNo());
 		            statement.setString(3, sta.getstaffAddress());

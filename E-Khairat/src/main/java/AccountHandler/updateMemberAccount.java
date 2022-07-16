@@ -25,7 +25,6 @@ public class updateMemberAccount extends HttpServlet {
 	}
     public updateMemberAccount() {
         super();
-        rd = new KhairatMemberDA();
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -63,7 +62,7 @@ public class updateMemberAccount extends HttpServlet {
 			mem.setmemberEmail(memberEMAIL);
 			mem.setmemberPassword(memberPASSWORD);
 			
-			rd.createKhairatmember(mem);
+			rd.updateKhairatmember(mem);
 			
 			session.removeAttribute("name");
 			session.removeAttribute("id");

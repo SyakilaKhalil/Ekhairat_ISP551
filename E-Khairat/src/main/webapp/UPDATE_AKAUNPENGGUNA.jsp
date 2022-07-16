@@ -169,7 +169,7 @@ td {
         </div> --%>
 
 
-    	<input type="hidden" name="action" value="">
+    	<input type="hidden" name="action" value="updateKhairatmember">
         <button type="submit" class="button button1" name="submit" >Submit</button><br><br>
 
 
