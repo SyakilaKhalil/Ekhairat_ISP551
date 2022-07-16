@@ -19,7 +19,7 @@
 </head>
 <style>
 div.sejarah{
-padding-left:130px;
+padding-left:200px;
 }
 th,tr,td{
 text-align: center;
