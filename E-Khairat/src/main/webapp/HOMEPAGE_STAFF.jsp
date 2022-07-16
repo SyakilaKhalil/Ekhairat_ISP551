@@ -18,6 +18,9 @@
 div.infoSemasa{
 padding-left: 90px;
 }
+th,tr{
+text-align: center;
+}
 table{
 width:80%;
  border-collapse: collapse;
@@ -80,7 +83,7 @@ width:80%;
         <div class="infoSemasa">
         <table border="2">
             <tr>
-                <th>Date And Time</th><th>Pengumuman</th><th>Staffid</th><th>StaffName</th>
+                <th>Date And Time</th><th>Pengumuman</th><th>StaffName</th>
             </tr>
             <%
             con = DB.getConnection();
