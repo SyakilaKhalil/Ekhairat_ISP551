@@ -23,7 +23,7 @@ text-align:center;
     color: #fff;
     border:none;
     border-radius:10px;
-    padding: 2px;
+    padding: 4px 7px;
    }
 textarea{
 width: 300px;
@@ -42,9 +42,10 @@ hight:500px;
 	<input type="hidden" name="action" value="createAnnounce">
 	<input class="button" type="submit" value="Hantar"/>
 	</form>
+	
+	</div>
 	<div class="btn">
 	<a id="linkin" onclick="window.location.href='HOMEPAGE_STAFF.jsp';">KEMBALI</a>
-	</div>
 	</div>
 </body>
 </html>

@@ -69,21 +69,6 @@
 			</div>
 			
 	    </div>
-
-
-	    	
-			<div class="scroll2">
-				<h3>LAPORAN KHAIRAT KESELURUHAN</h3>
-				<br>
-				<br>
-			<br>
-			<div class="button">
-				<li id="link1">
-				<b><a id="linkin" href="laporankewangan.jsp">PAPAR LAPORAN</a></b>
-			</li>
-			</div>
-	    
-</div>
 		
 					<div class="scroll2">
 						<h3>SENARAI AHLI</h3>

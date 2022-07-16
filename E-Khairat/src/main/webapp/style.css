@@ -629,3 +629,18 @@ label{
 #aktiviti{
   padding: 50px 50px;
 }
+div.scroll2
+{
+  margin:20px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  background-color: #ffffb3;
+  
+  width: 400px;
+  height: 300px;
+  border-radius: 30px;
+   text-align: center; 
+  border-style: solid;
+  border-color: coral;
+}
