@@ -64,7 +64,7 @@ align:center;
         <input type=hidden name="memberID"  value="${memberID}">
         <table border="2">
             <tr>
-                <th>Member ID</th><th>File Name</th><th>Added Date</th><th>Download</th>
+                <th>Member KP</th><th>Nama File</th><th>Tarikh</th><th>Muat Turun</th>
             </tr>
             <%
             String memberid =(String)session.getAttribute("id");
