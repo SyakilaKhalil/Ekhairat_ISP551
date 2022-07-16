@@ -53,7 +53,7 @@ width:80%;
                 <b><a id="linkin" onclick="window.location.href='.jsp';">PENGESAHAN PEMBAYARAN</a></b>
             </li>
             <li id="link">
-                <b><a id="linkin" onclick="window.location.href='.jsp';">PENERIMAAN KHAIRAT</a></b>
+                <b><a id="linkin" onclick="window.location.href='.jsp';">KHAIRAT</a></b>
             </li>
             <li id="log" class="log">
                 <b><a id="linkin" onclick="window.location.href='staff.index.jsp';">LOG KELUAR</a></b>
@@ -108,6 +108,7 @@ width:80%;
 			<div id="reka">
 			<button class="reka" onclick="window.location.href='createannouncement.jsp';">REKA PENGUMUMAN</button>
 			</div>
+			<br>
     </header>
 </body>
 </html>

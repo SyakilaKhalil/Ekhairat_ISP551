@@ -35,15 +35,12 @@
 				<b><a id="linkin" onclick="window.location.href='AKAUN_STAFF.jsp';">AKAUN PENGGUNA</a></b>
 			</li>
 			<li id="link">
-				<b><a id="linkin" onclick="window.location.href='LAPORAN.jsp';">LAPORAN</a></b>
+				<b><a id="linkin" onclick="window.location.href='laporan.jsp';">LAPORAN</a></b>
 			</li><li id="link">
-				<b><a id="linkin" href="">PENGESAHAN PEMBAYARAN</a></b>
+				<b><a id="linkin" onclick="window.location.href='.jsp';" >PENGESAHAN PEMBAYARAN</a></b>
 			</li>
 			<li id="link">
-				<b><a id="linkin" href="">PENERIMAAN KHAIRAT</a></b>
-			</li>
-			<li id="link">
-				<b><a id="linkin" href="">PENGURUSAN AKTIVITI</a></b>
+				<b><a id="linkin" onclick="window.location.href='.jsp';" >KHAIRAT</a></b>
 			</li>
 			<li id="log" class="log">
 				<b><a id="linkin" onclick="window.location.href='staff.index.jsp';">LOG KELUAR</a></b>
