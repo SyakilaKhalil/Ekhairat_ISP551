@@ -26,7 +26,6 @@ table-layout: fixed;
    margin-right:30px;
   margin-top:40px;
   font-size:18;
-  background-color: white;
 }
 input{
  width: 100%;
