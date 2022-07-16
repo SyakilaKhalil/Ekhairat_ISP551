@@ -16,7 +16,7 @@
 }
 div.umum{
 align:center;
-background-colour:#ffe699;
+background-color:#ffe699;
 }
 </style>
 <body>

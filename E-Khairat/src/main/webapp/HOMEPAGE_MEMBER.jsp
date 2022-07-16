@@ -13,6 +13,20 @@
 <title>Halaman Utama</title>
 <link rel="stylesheet" href="style.css">
 </head>
+<style>
+div.infoSemasa{
+padding-left: 120px;
+}
+th,tr{
+text-align: center;
+}
+table{
+width:80%;
+ border-collapse: collapse;
+  border-radius: 1em;
+  overflow: hidden;
+}
+</style>
 <body>
 <%
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
@@ -55,9 +69,10 @@
         <div class="scroll">
        <form action="uploadkhairatpayment" method="post">
         <input type=hidden name="staffid"  value="${staffid}">
+       <div class="infoSemasa">
         <table border="2">
             <tr>
-                <th>Date And Time</th><th>Pengumuman</th><th>Staffid</th><th>StaffName</th>
+                <th>Tarikh & Masa</th><th>Pengumuman</th><th>Nama Staf</th>
             </tr>
             <%
             con = DB.getConnection();
@@ -69,7 +84,6 @@
             <tr>
             	<td><%=rs.getTimestamp(1)%></td>
                 <td><%=rs.getString(2)%></td>
-                <td><%=rs.getString(3)%></td>
                 <td><%=rs.getString(4)%></td>
             </tr>
             <%
@@ -77,6 +91,7 @@
             %>
             
         </table>
+        </div>
         </form>
         </div>
 
