@@ -67,6 +67,7 @@ width:80%;
         %>
         <br><br><br>
         <div class="scroll">
+        <br>
        <form action="uploadkhairatpayment" method="post">
         <input type=hidden name="staffid"  value="${staffid}">
        <div class="infoSemasa">

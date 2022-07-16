@@ -7,16 +7,15 @@
 <title>Insert title here</title>
 </head>
 <style>
-
+body{
+background-color:#ffe699;
+text-align:center;
+}
 .button{
     background-color:#ACD1AF;
     color: #fff;
     border:none;
     border-radius:10px;
-}
-div.umum{
-align:center;
-background-color:#ffe699;
 }
 </style>
 <body>
@@ -30,7 +29,7 @@ background-color:#ffe699;
 	<input class="button" type="submit" value="Hantar"/>
 	</form>
 	
-	<a id="linkin" onclick="window.location.href='pengurusan_aktivti.jsp';">KEMBALI</a>
+	<a id="linkin" onclick="window.location.href='HOMEPAGE_STAFF.jsp';">KEMBALI</a>
 	</div>
 </body>
 </html>
