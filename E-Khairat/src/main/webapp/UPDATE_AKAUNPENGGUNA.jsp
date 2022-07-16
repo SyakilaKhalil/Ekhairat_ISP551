@@ -18,16 +18,23 @@ table, th, td {
   border: 1px solid  #f4a460;
   border-radius:2px;
 }
+table, th, td {
+  border: 1px solid  #f4a460;
+  border-radius:2px;
+}
 table {
 table-layout: fixed;
   width: 90%;
-  margin-left:30px;
+   margin-left:30px;
+   margin-right:30px;
   margin-top:40px;
   font-size:18;
+  background: white;
   border-colour:;
 }
 input{
  width: 100%;
+border:1px  #f4a460;
  font-family: serif, Helvetica; 
  font-size:18;
 }
