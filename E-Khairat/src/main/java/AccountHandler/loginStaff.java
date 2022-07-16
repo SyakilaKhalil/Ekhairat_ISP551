@@ -19,13 +19,13 @@ import javax.servlet.http.HttpSession;
  * Servlet implementation class loginstaff
  */
 @WebServlet("/loginstaff")
-public class loginstaff extends HttpServlet {
+public class loginStaff extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public loginstaff() {
+    public loginStaff() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -45,9 +45,9 @@ public class loginstaff extends HttpServlet {
 		//request dispatcher
 		RequestDispatcher dispatcher = null;
 		
-		String dbUrl = "jdbc:postgresql://ec2-52-73-184-24.compute-1.amazonaws.com/dckqi5pj1ki93c";
-		String username = "olkzesmgaifpnp";
-		String password = "e13b8bdf28023c60fd1bfde4b54a707571b971a82e85d244b7871afc806f26ed";
+		String dbUrl = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com/dd29m58g7a4tda";
+		String username = "qekmfhbqusidva";
+		String password = "22cff620d0b06f17950d4f4669a1e0f11f168c04053c0a218b1d83ee130fddb9";
 		
 		try {
 			Class.forName("org.postgresql.Driver");
