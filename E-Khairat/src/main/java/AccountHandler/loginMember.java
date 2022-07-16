@@ -1,23 +1,35 @@
 package AccountHandler;
 
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.annotation.*;
-import javax.servlet.http.*;
-import java.sql.*;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-
+/**
+ * Servlet implementation class loginMember
+ */
 @WebServlet("/loginmember")
-public class login extends HttpServlet {
+public class loginMember extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-
-    public login() {
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public loginMember() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String memberid = request.getParameter("nomborkp");
 		String memberpassword = request.getParameter("pass");
@@ -75,4 +87,5 @@ public class login extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+
 }
