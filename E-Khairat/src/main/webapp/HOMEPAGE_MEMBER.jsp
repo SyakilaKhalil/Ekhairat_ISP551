@@ -1,3 +1,8 @@
+
+<%@page import="EkhairatDA.DB"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,10 +46,38 @@
 
         </h1>
         </div>
-
+<%!
+            Connection con = null;
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+        %>
         <br><br><br>
         <div class="scroll">
-
+        <form action="uploadkhairatpayment" method="post">
+        <input type=hidden name="staffid"  value="${staffid}">
+        <table border="2">
+            <tr>
+                <th>Date And Time</th><th>Pengumuman</th><th>Staffid</th><th>StaffName</th>
+            </tr>
+            <%
+            con = DB.getConnection();
+            String sql = "select announcedatentime, announcedetail, staffid, staffname from announcement natural join khairatstaff order by announcedatentime";
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+            %>
+            <tr>
+            	<td><%=rs.getTimestamp(1)%></td>
+                <td><%=rs.getString(2)%></td>
+                <td><%=rs.getString(3)%></td>
+                <td><%=rs.getString(4)%></td>
+            </tr>
+            <%
+                }
+            %>
+            
+        </table>
+        </form>
         </div>
 
     </header>
