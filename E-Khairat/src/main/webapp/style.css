@@ -542,11 +542,12 @@ table.tableSen{
 .reka{
   background-color:#C28F4C ;
   border: none;
-  padding: 5px 10%;
+  padding: 10px 4%;
   padding-bottom: 10px;
   border-radius: 30px;
   cursor: pointer;
   color: white;
+  float:right;
 }
 
 .alatan{
