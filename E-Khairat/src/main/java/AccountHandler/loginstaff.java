@@ -19,13 +19,13 @@ import javax.servlet.http.HttpSession;
  * Servlet implementation class loginstaff
  */
 @WebServlet("/loginstaff")
-public class loginStaff extends HttpServlet {
+public class loginstaff extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public loginStaff() {
+    public loginstaff() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -69,6 +69,11 @@ public class loginStaff extends HttpServlet {
 			if(result.next()) {
 				//will redirect to homepage
 				session.setAttribute("name", result.getString("staffname"));
+				session.setAttribute("id", result.getString("staffid"));
+				session.setAttribute("contact", result.getString("staffcontactno"));
+				session.setAttribute("address", result.getString("staffaddress"));
+				session.setAttribute("email", result.getString("staffemail"));
+				session.setAttribute("password", result.getString("staffpassword"));
 				
 				//request dispatcher - if login successful
 				dispatcher = request.getRequestDispatcher("HOMEPAGE_STAFF.jsp");

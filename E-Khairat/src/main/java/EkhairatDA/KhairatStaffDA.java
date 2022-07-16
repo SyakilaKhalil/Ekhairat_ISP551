@@ -42,9 +42,9 @@ public class KhairatStaffDA {
             preparedStatement.setString(1, sta.getstaffName());
             preparedStatement.setString(2, sta.getstaffID());
             preparedStatement.setString(3, sta.getstaffContactNo());
+            preparedStatement.setString(4, sta.getstaffAddress());
             preparedStatement.setString(5, sta.getstaffEmail());
             preparedStatement.setString(6, sta.getstaffPassword());
-            preparedStatement.setString(4, sta.getstaffAddress());
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {

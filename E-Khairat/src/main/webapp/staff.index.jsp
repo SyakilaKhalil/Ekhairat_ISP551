@@ -28,7 +28,7 @@
 		</div>
 		<input type="submit" name="submitlogin" value="LOG MASUK" class="btnlogin" /><br>
 	</form>
-	<button class="regis" onclick="window.location.href='registrationmember.jsp';" >DAFTAR AKAUN BAHARU</button>
+	<button class="regis" onclick="window.location.href='registrationstaff.jsp';" >DAFTAR AKAUN BAHARU</button>
 
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="js/main.js"></script>
