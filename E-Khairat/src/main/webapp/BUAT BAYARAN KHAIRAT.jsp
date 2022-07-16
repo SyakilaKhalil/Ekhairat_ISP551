@@ -31,14 +31,16 @@
 				<b><a id="linkin" onclick="window.location.href='loginpage.jsp';">LOG KELUAR</a></b>
 			</li>
 			</ul>
-			<form action="uploadkhairatpayment" method="post" enctype="multipart/form-data">
+			<form action="uploaddetail" method="post" enctype="multipart/form-data">
 			<h1 id = "muatnaik">MUAT NAIK BUTIRAN TRANSAKSI</h1>
-<br>
-<br>
+			<br>
+			<br>
 
  			 <div class="button">
  			 	<td>Upload File</td>
-                <input type="file" name="filekhairat" required>
+                <input type="file" name="filekhairat" accept="image" required>
+                <input type="hidden" name="action"  value="createPayment">
+                <input type="hidden" name=""  value="">
                 <input type="submit" value="Submit">
              </div>
   			 <div class="button right">

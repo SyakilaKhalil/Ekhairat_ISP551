@@ -66,23 +66,22 @@ font-size:36px;
         <input type=hidden name="memberID"  value="${memberID}">
         <table border="2">
             <tr>
-                <th>Member KP</th><th>Nama File</th><th>Tarikh</th><th>Muat Turun</th>
+                <th>Member KP</th><th>Tarikh Dan Masa</th><th>Papar Resit Transaksi</th>
             </tr>
             <%
             String memberid =(String)session.getAttribute("id");
             session.setAttribute("id",memberid);
             con = DB.getConnection();
-            String sql = "select * from khairatpayment where memberid=?";
+            String sql = "select * from payment where memberid=?";
             ps = con.prepareStatement(sql);
             ps.setString(1, memberid);
             rs = ps.executeQuery();
             while (rs.next()) {
             %>
             <tr>
-                <td><%=rs.getString(4)%></td>
-                <td><%=rs.getString(1)%></td>
-                <td><%=rs.getTimestamp(3)%></td>
-                <td><a href="downloadkhairatpayment?paymentdetail=<%=rs.getString(1)%>">Download</a></td>
+                <td><%=rs.getString(3)%></td>
+                <td><%=rs.getTimestamp(2)%></td>
+                <td><a href="displaykhairatpayment?receiptid=<%=rs.getString(1)%>">Papar</a></td>
             </tr>
             <%
                 }

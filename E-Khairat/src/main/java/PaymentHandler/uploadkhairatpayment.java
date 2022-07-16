@@ -1,18 +1,16 @@
 package PaymentHandler;
 
-import java.io.File;
+
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import javax.servlet.RequestDispatcher;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -21,102 +19,127 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+import Ekhairat.Javabean.*;
+
 /**
- * Servlet implementation class uploadkhairatpayment
+ * Servlet implementation class Uploader
  */
-@WebServlet("/uploadkhairatpayment")
-@MultipartConfig(fileSizeThreshold = 1024*1024*10)
+@WebServlet("/uploaddetail")
+@MultipartConfig(maxFileSize = 16177215)
 public class uploadkhairatpayment extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	PrintWriter out = null;
-    Connection con = null;
-    PreparedStatement ps = null;
-    HttpSession session = null;
     /**
-     * @see HttpServlet#HttpServlet()
+     * Default constructor. 
      */
     public uploadkhairatpayment() {
-        super();
+    	super();
         // TODO Auto-generated constructor stub
     }
-
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-    @Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.setContentType("text/html");
+	
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+    		throws ServletException, IOException {
+	 response.setContentType("text/html");
 		
-
+		String action = request.getParameter("action");
+		try {
+			switch (action) {
+			case "createPayment": 
+				createPayment(request,response);
+			break;
+			case "createPaymentdetail": 
+				createPaymentdetail(request,response);
+			break;
+			}
+		}
+		catch (SQLException e) {
+			throw new ServletException(e);
+			}
+	}
+ 		
+		private void createPayment (HttpServletRequest request, HttpServletResponse response)
+        throws SQLException, IOException, ServletException{
+	 	FileInputStream fis=null; 
+	 	
+	 	Part filePart =request.getPart("filekhairat");  
+		String paymenttype = "Khairat";
+	 	HttpSession session=request.getSession(false);
+		String memberID=(String)session.getAttribute("id");
+		Timestamp Datentime = new Timestamp(System.currentTimeMillis());
+		String receiptid = null;
 		
-		String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com/dd29m58g7a4tda";
-		String user = "qekmfhbqusidva";
-		String pass = "22cff620d0b06f17950d4f4669a1e0f11f168c04053c0a218b1d83ee130fddb9";
+		InputStream fileContent = filePart.getInputStream();
+		paymentkhairat pay = new paymentkhairat();
+		
+		String dbUrl = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com/dd29m58g7a4tda";
+		String username = "qekmfhbqusidva";
+		String password = "22cff620d0b06f17950d4f4669a1e0f11f168c04053c0a218b1d83ee130fddb9";
 		
 		try {
-			out= response.getWriter();
-			session = request.getSession(false);
-			String folderName = "ReceiptPaymentDetails";
-			String uploadPath = request.getServletContext().getRealPath("") + folderName;
-			File dir = new File(uploadPath);
+			Class.forName("org.postgresql.Driver");
+			Connection connection = DriverManager.getConnection(dbUrl,username,password);
 			
-			if(!dir.exists()) {
-				dir.mkdirs();
+			//SQL Statement/Query 
+			PreparedStatement pst = connection.prepareStatement("insert into khairatpayment(datentime,memberid) values(?,?)");
+			// Set string - set for ? by order
+			pst.setTimestamp(1, Datentime);
+			pst.setString(2, memberID);
+			
+			pst.executeUpdate();
+			
+			PreparedStatement ps = connection.prepareStatement("select * from khairatpayment where memberid=?");
+			ps.setString(1, memberID);
+			
+			ResultSet result = ps.executeQuery();
+			while(result.next()) {
+				receiptid = result.getString("receiptid");
 			}
-			Part filePart = request.getPart("filekhairat");
-			String paymentDetail = filePart.getSubmittedFileName();
-			String Path = folderName + File.separator + paymentDetail;
-			Timestamp Datentime = new Timestamp(System.currentTimeMillis());
+			
+			
+			PreparedStatement p = connection.prepareStatement("insert into payment(datentime,memberid,paymentdetail,paymenttype,receiptid) values(?,?,?,?,?)");
+			p.setTimestamp(1, Datentime);
+			p.setString(2, memberID);
+			p.setBinaryStream(3, fileContent);
+			p.setString(4, paymenttype);
+			p.setString(5, receiptid);
+			
+			p.executeUpdate();
+			response.sendRedirect("BUAT BAYARAN KHAIRAT.jsp");
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+ 		
+		private void createPaymentdetail(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+			// TODO Auto-generated method stub
+			FileInputStream fis=null; 
+		 	Part filePart =request.getPart("fileKhairat");  
+			String paymenttype = "Khairat";
 			HttpSession session=request.getSession(false);
-			String memberID=(String)session.getAttribute("id");
-			System.out.println("fileName: " + paymentDetail);
-			System.out.println("Path: " + uploadPath);
-			InputStream is = filePart.getInputStream();
-			Files.copy(is, Paths.get(uploadPath + File.separator + paymentDetail), StandardCopyOption.REPLACE_EXISTING);
+			String receiptid=(String)session.getAttribute("receiptid");
+		 	
+			InputStream fileContent = filePart.getInputStream();
+			paymentkhairat pay = new paymentkhairat();
+			
+			String dbUrl = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com/dd29m58g7a4tda";
+			String username = "qekmfhbqusidva";
+			String password = "22cff620d0b06f17950d4f4669a1e0f11f168c04053c0a218b1d83ee130fddb9";
 			
 			try {
 				Class.forName("org.postgresql.Driver");
-				Connection connection = DriverManager.getConnection(dbURL,user,pass);
-				String sql = "insert into khairatpayment(paymentdetail,path,datentime, memberid) values (?,?,?,?)";
-				ps = connection.prepareStatement(sql);
-				ps.setString(1, paymentDetail);
-				ps.setString(2, Path);
-				ps.setTimestamp(3, Datentime);
-				ps.setString(4, memberID);
-				int status = ps.executeUpdate();
-				if(status > 0 ) {
-					
-					session.setAttribute("paymentDetail", paymentDetail);
-					session.setAttribute("Datentime", Datentime);
-					session.setAttribute("memberID", memberID);
-					
-					String msg = "" + paymentDetail + " FIle uploaded successfully...";
-					request.setAttribute("msg", msg);
-					RequestDispatcher rd = request.getRequestDispatcher("success.jsp");
-					rd.forward(request, response);
-					System.out.println("FIle uploaded successfully...");
-					System.out.println("Uploaded Path: " + uploadPath);
-				}
-			} catch (Exception e) {
-				out.println("Exception: " + e);
-				System.out.println("Exception: " + e);
+				Connection connection = DriverManager.getConnection(dbUrl,username,password);
+				
+				//SQL Statement/Query 
+				PreparedStatement pst = connection.prepareStatement("insert into payment(paymentdetail,paymenttype,receiptid) values(?,?,?)");
+				pst.setBinaryStream(1, fileContent);
+				pst.setString(2, paymenttype);
+				pst.setString(3, receiptid);
+				
+				pst.executeUpdate();
+				response.sendRedirect("BUAT BAYARAN KHAIRAT.jsp");
+				
+			} catch(Exception e) {
 				e.printStackTrace();
-			} finally {
-				try {
-					if(ps != null) {
-						ps.close();
-					}
-				} catch (SQLException e) {
-					out.println(e);
-				}
 			}
-		} catch (IOException | ServletException e) {
-			out.println("Exception: "  + e);
-			System.out.println("Exception2: " + e);
 		}
-	}
-    
 }

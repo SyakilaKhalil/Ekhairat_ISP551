@@ -1,19 +1,29 @@
 package Ekhairat.Javabean;
 
-import java.sql.Date;
+import javax.servlet.http.Part;
+import com.google.protobuf.Timestamp;
 
 public class paymentkhairat {
-	String paymentdetail;
+	Part paymentdetail;
 	String path;
-	Date datentime;
+	Timestamp datentime;
 	String memberid;
+	String paymenttype;
 	
+	public String getpaymenttype() {
+		return paymenttype;
+	}
+
+	public void setpaymenttype(String paymenttype) {
+		this.paymenttype = paymenttype;
+	}
+
 	public paymentkhairat() {}
 	
-	public String getpaymentdetail() {
+	public Part  getpaymentdetail() {
 		return paymentdetail;
 	}
-	public void setpaymentdetail(String paymentdetail) {
+	public void setpaymentdetail(Part  paymentdetail) {
 		this.paymentdetail = paymentdetail;
 	}
 	public String getpath() {
@@ -22,10 +32,10 @@ public class paymentkhairat {
 	public void setpath(String path) {
 		this.path = path;
 	}
-	public Date getdatentime() {
+	public Timestamp getdatentime() {
 		return datentime;
 	}
-	public void setdatentime(Date datentime) {
+	public void setdatentime(Timestamp datentime) {
 		this.datentime = datentime;
 	}
 	public String getmemberid() {
