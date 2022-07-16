@@ -79,7 +79,7 @@ td {
 	    <br><br><br>
 	    <div class="scroll">
 
-	    	<form action="KhairatmemberHandler" method="post">
+	    	<form action="updateMemberAccount" method="post">
 
 <div class="container" style="height: auto">
 
