@@ -52,9 +52,9 @@ public class uploadkhairatpayment extends HttpServlet {
 		
 
 		
-		String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";
-		String username = "ekhairat";
-		String password = "system";
+		String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com/dd29m58g7a4tda";
+		String user = "qekmfhbqusidva";
+		String pass = "22cff620d0b06f17950d4f4669a1e0f11f168c04053c0a218b1d83ee130fddb9";
 		
 		try {
 			out= response.getWriter();
