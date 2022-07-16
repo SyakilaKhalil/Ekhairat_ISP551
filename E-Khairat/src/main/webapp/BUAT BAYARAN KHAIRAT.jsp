@@ -36,7 +36,7 @@
 <br>
 <br>
 
- 			 <div class="button center">
+ 			 <div class="button">
  			 	<td>Upload File</td>
                 <input type="file" name="filekhairat" required>
                 <input type="submit" value="Submit">
