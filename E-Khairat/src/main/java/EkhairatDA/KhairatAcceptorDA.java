@@ -38,11 +38,12 @@ public class KhairatAcceptorDA {
 
         // try-with-resource statement will auto close the connection.
         try (Connection con = getConnection();
-             PreparedStatement preparedStatement = con.prepareStatement("insert into khairatacceptor(acceptorvalue,memberid,staffid) values(?,?,?)"))
+             PreparedStatement preparedStatement = con.prepareStatement("insert into khairatacceptor(acceptorvalue,memberid,staffid,acceptornote) values(?,?,?,?)"))
         {
             preparedStatement.setInt(1, ac.getacceptorvalue());
             preparedStatement.setString(2, ac.getmemberid());
             preparedStatement.setString(3, ac.getstaffid());
+            preparedStatement.setString(4, ac.getacceptornote());
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {

@@ -4,7 +4,14 @@ public class Khairatacceptor {
 	int acceptorvalue;
 	String memberid;
 	String staffid;
+	String acceptornote;
 	
+	public String getacceptornote() {
+		return acceptornote;
+	}
+	public void setacceptornote(String acceptornote) {
+		this.acceptornote = acceptornote;
+	}
 	public int getacceptorvalue() {
 		return acceptorvalue;
 	}

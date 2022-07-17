@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Ekhairat.Javabean.Khairatacceptor;
 import EkhairatDA.KhairatAcceptorDA;
@@ -48,8 +49,8 @@ response.setContentType("text/html");
 		String action = request.getParameter("action");
 		try {
 			switch (action) {
-			case "createKhairatmember": 
-				createKhairatmember(request,response);
+			case "createAcceptor": 
+				createAcceptor(request,response);
 			break;
 	
 			}
@@ -58,22 +59,25 @@ response.setContentType("text/html");
 			throw new ServletException(e);
 			}
 	}
-	private void createKhairatmember(HttpServletRequest request, HttpServletResponse response)
+	private void createAcceptor(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
 
 		int acceptorvalue = Integer.parseInt(request.getParameter("acceptorvalue"));
-		String memberid = request.getParameter("memberid");
-		String staffid = request.getParameter("staffid");
+		HttpSession session=request.getSession();  
+		String memberid=(String)session.getAttribute("memberidaccept");
+		String staffid =(String)session.getAttribute("id");
+		String acceptornote = request.getParameter("acceptornote");
 
 
 		Khairatacceptor ac = new Khairatacceptor();
 		ac.setacceptorvalue(acceptorvalue);
 		ac.setmemberid(memberid);
 		ac.setstaffid(staffid);
+		ac.setacceptornote(acceptornote);
 
 		
 		rd.createAcceptor(ac);
         
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("khairatacceptor.jsp");
     }
 }

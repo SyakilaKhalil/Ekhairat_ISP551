@@ -12,6 +12,7 @@
 <meta name="author" content="" />
 <title>Halaman Utama</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="popup.css">
 <script src="testingpopup.js"></script>
 </head>
 <style>
@@ -59,7 +60,36 @@ width:80%;
                 <b><a id="linkin" onclick="window.location.href='staff.index.jsp';">LOG KELUAR</a></b>
             </li>
         </ul>
+		<%!
+            Connection connection = null;
+            PreparedStatement stmt = null;
+            ResultSet rst = null;
+        %>
+<form action="createNewAcceptor" method="post">
+                        <select name="memberid" onchange="document.getElementById('vid').value=this.option[this.selectedIndex].text">
+                            <option>Select One</option>
+                   <%
+                   connection = DB.getConnection();
+                   stmt=connection.prepareStatement("Select memberid, membername from khairatmember order by memberid");
+                   ResultSet rst=stmt.executeQuery();
+                   while(rst.next())
+                       {
+                    %>
+                            <option>No.K/P: <%=rst.getString("memberid")%> | Nama: <%=rst.getString("membername")%></option>
+                     <%		session.setAttribute("memberidaccept", rst.getString("memberid"));
 
+ 						}
+                     %>
+                        </select>
+                     
+                    
+                    <label class="" for="acceptorvalue">Jumlah Pemberian</label>
+					<input class = "" type="number" id="acceptorvalue" name="acceptorvalue" placeholder = "Jumlah Pemberian" required>
+                    <label for="acceptornote">Catatan Penerima</label>
+					<textarea rows = "5" cols = "60" id="acceptornote" name="acceptornote" placeholder = "Sila tulis catatan penerimaan khairat..."></textarea>
+					<input type="hidden" name="action" value="createAcceptor">
+					<button type="submit" name="submit">Cipta Penerima</button>
+</form>
 <br><br>
         <div class="info">
         <h1>
@@ -67,34 +97,34 @@ width:80%;
 
         </h1>
         </div>
-		<%!
+        <%!
             Connection con = null;
             PreparedStatement ps = null;
             ResultSet rs = null;
         %>
-        <br><br><br>
-        <div class="scroll">
-        <br>
 		<form action="uploadkhairatpayment" method="post">
         <input type=hidden name="staffid"  value="${staffid}">
         <div class="infoSemasa">
         <table border="2">
             <tr>
-                <th>Tarikh & Masa</th><th>Pengumuman</th><th>Nama Staf</th><th>Buang Pengumuman</th>
+                <th>ID Pengeluaran</th><th>Maklumat Penerima</th><th>Maklumat Pemberi</th><th>Jumlah Pemberian</th><th>Catatan</th>
                 
             </tr>
             <%
+            
             con = DB.getConnection();
-            String sql = "select announcedatentime, announcedetail, staffid, staffname, announceid from announcement natural join khairatstaff order by announcedatentime";
+            String sql = "select acceptorid,memberid, membername,staffid,staffname,acceptorvalue,acceptornote from khairatacceptor join khairatmember using (memberid) join khairatstaff using (staffid) order by acceptorid";
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
             %>
             <tr>
-            	<td><%=rs.getTimestamp(1)%></td>
-                <td><%=rs.getString(2)%></td>
-                <td><%=rs.getString(4)%></td>
-                <td><a href="deleteAnnouncement?id=<%=rs.getString(5)%>">Buang</a></td>
+                <td><%=rs.getString(1)%></td>
+                <td>No.K/P: <%=rs.getString(2)%> Nama: <%=rs.getString(3)%> </td>
+                <td>No.K/P: <%=rs.getString(4)%> Nama:<%=rs.getString(5)%></td>
+                <td>RM<%=rs.getString(6)%></td>
+                <td><%=rs.getString(7)%></td>
+                <td><a href='deleteAcceptor?id=<%=rs.getString(1)%>' class="btn btn-danger" style= "padding:20px;border-radius:20px;font-size:15px; background-color: #e60000" onclick="ConfirmDelete()">Delete</a></td>
             </tr>
             <%
                 }
@@ -103,12 +133,28 @@ width:80%;
         </table>
         </div>
         </form>
-			</div>
 			<br>
-			<div id="reka">
-			<button class="reka" onclick="window.location.href='createannouncement.jsp';">REKA PENGUMUMAN</button>
-			</div>
 			<br>
     </header>
+    <div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <form class="modal-content" action="deleteAcceptor">
+    <div class="modal-container">
+      <h1>Delete Account</h1>
+      <p>Are you sure you want to this account?</p>
+    
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Delete</button>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+function ConfirmDelete()
+{
+  return confirm("Are you sure you want to delete?");
+}
+</script>
 </body>
 </html>

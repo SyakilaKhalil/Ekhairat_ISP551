@@ -37,20 +37,17 @@ public class deleteAcceptor extends HttpServlet {
 		String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com/dd29m58g7a4tda";
 		String user = "qekmfhbqusidva";
 		String pass = "22cff620d0b06f17950d4f4669a1e0f11f168c04053c0a218b1d83ee130fddb9";
-		String acceptorid= request.getParameter("id");
+		String acceptorid=request.getParameter("id");
 		
 		try {
 			Class.forName("org.postgresql.Driver");
 			Connection connection = DriverManager.getConnection(dbURL,user,pass);
 			ps = connection.prepareStatement("DELETE FROM khairatacceptor WHERE acceptorid=?");
-			
 			ps.setString(1, acceptorid);
 			
-			int status = ps.executeUpdate();
-			if(status > 0 ) {
-				RequestDispatcher rd = request.getRequestDispatcher("HOMEPAGE_STAFF.jsp");
-				rd.forward(request, response);
-			}
+			ps.executeUpdate();
+			response.sendRedirect("khairatacceptor.jsp");
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
