@@ -163,7 +163,7 @@ width:100%;
                 <td><%=rs.getString(4)%></td>
                 <td><%=rs.getString(5)%></td>
                 <td><a href='deletemember?memberid=<%=rs.getString(1)%>' class="btn btn-danger" style= "padding:6px;border-radius:20px;font-size:15px; background-color: #e60000" onclick="ConfirmPadam()">Padam Akaun</a>
-                <a href='aktifakaunsemula?memberid=<%=rs.getString(1)%>' class="btn btn-danger" style= "padding:6px;border-radius:20px;font-size:15px; background-color: #C1E1C1" onclick="ConfirmAktif()">Aktifkan Akaun Semula</a></td>
+                <a href='aktifakaunsemula?memberid=<%=rs.getString(1)%>' class="btn btn-danger" style= "padding:6px;border-radius:20px;font-size:15px; background-color: #C1E1C1" onclick="ConfirmAktif()">Aktifkan Akaun</a></td>
             </tr>
             <%
                 }
