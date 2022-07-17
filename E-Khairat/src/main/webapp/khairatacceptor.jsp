@@ -151,7 +151,7 @@ width:80%;
             <%
             
             con = DB.getConnection();
-            String sq = "select memberid, membername, membercontactno, memberaddress, status from khairatmember where status='DELETE AKAUN INI'";
+            String sq = "select memberid, membername, membercontactno, memberaddress, request from khairatmember where request='DELETE AKAUN INI'";
             ps = con.prepareStatement(sq);
             rs = ps.executeQuery();
             while (rs.next()) {
