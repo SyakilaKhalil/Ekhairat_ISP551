@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Buat Bayaran Khairat</title>
+<title>Buat Sumbangan</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -35,6 +35,8 @@
 			<h1 id = "muatnaik">MUAT NAIK BUTIRAN TRANSAKSI</h1>
 			<br>
 			<br>
+			<h3>JUMLAH SUMBANGAN: RM</h3>
+			<input type="text" id="donate" name="" required>
 
  			 <div class="button">
  			 	<td>Muat Naik Gambar</td>

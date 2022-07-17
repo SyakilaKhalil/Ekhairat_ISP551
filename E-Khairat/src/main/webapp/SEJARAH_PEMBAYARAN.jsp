@@ -33,7 +33,13 @@
 				<b><a id="s_subangan" onclick="window.location.href='SEJARAH PEMBAYARAN KHAIRAT.jsp';">SEJARAH PEMBAYARAN KHAIRAT</a></b>
 			</li>
 			<li id="link1">
+				<b><a id="s_subangan" onclick="window.location.href='SEJARAH SUMBANGAN.jsp';">SEJARAH SUMBANGAN</a></b>
+			</li>
+			<li id="link1">
 				<b><a id="s_subangan" onclick="window.location.href='BUAT BAYARAN KHAIRAT.jsp';">BUAT BAYARAN KHAIRAT</a></b>
+			</li>
+			<li id="link1">
+				<b><a id="s_subangan" onclick="window.location.href='BUAT SUMBNAGAN.jsp';">BUAT SUMBANGAN</a></b>
 			</li>
 		</ul>		
 	    </div>
