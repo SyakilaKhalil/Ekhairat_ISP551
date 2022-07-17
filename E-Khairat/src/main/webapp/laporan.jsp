@@ -51,23 +51,22 @@
 			<div class="scroll2">
 				<h3>LAPORAN KHAIRAT TAHUNAN</h3>
 				<br>
-			<form action="#">
+			<form action="paparLaporan2.jsp">
 		      <label for="lang">Sila pilih tahun</label>
-		    <select name="languages" id="lang">
-		        <option value="2020">2020</option>
-		        <option value="2021">2021</option>
-		        <option value="2022">2022</option>
+		    <select name="yearinsert" id="yearinsert">
+		        <option id="yearinsert" value="2020">2020</option>
+		        <option id="yearinsert" value="2021">2021</option>
+		        <option id="yearinsert" value="2022">2022</option>
       		</select>
-			</form>
 
 
 			<br>
 			<div class="button">
 				<li id="link1">
-				<b><a id="linkin" href="">PAPAR LAPORAN</a></b>
+				<b><button type="submit" name="submit">PAPAR LAPORAN</button></b>
 			</li>
 			</div>
-			
+			</form>
 	    </div>
 		
 					<div class="scroll2">
