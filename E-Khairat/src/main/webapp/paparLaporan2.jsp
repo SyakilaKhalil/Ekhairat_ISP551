@@ -126,7 +126,7 @@ font-size:28;
                 while(r.next()){
                 total = r.getString(1);
                 %>
-                <h1>Total Khairat payment RM:<%=total %></h1>
+                <h1 style="font-color:black">Total Khairat payment RM:<%=total %></h1>
             <%}
                 
             }else if(year.equalsIgnoreCase("2021")){
@@ -158,7 +158,7 @@ font-size:28;
                 while(r.next()){
                 total = r.getString(1);
                 %>
-                <h1>Total Khairat payment RM:<%=total %></h1>
+                <h1 style="font-color:black">Total Khairat payment RM:<%=total %></h1>
             <%}
        
             }else if(year.equalsIgnoreCase("2022")){
@@ -190,7 +190,7 @@ font-size:28;
                 while(r.next()){
                 total = r.getString(1);
                 %>
-                <h1>Total Khairat payment RM:<%=total %></h1>
+                <h1 style="font-color:black">Total Khairat payment RM:<%=total %></h1>
             <%}
             }
             %>
