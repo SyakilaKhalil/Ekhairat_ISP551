@@ -136,10 +136,62 @@ width:80%;
 			<br>
 			<br>
 </header>
+<div class="info">
+        <h1>
+             SENARAI AHLI YANG MAHU AKAUN MEREKA DIHAPUSKAN
+        </h1>
+        <form action="uploadkhairatpayment" method="post">
+        <input type=hidden name="staffid"  value="${staffid}">
+        <div class="infoSemasa">
+        <table border="2">
+            <tr>
+                <th>memberid</th><th>membername</th><th>membercontactno</th><th>memberaddress</th><th>status</th>
+                
+            </tr>
+            <%
+            
+            con = DB.getConnection();
+            String sq = "select memberid, membername, membercontactno, memberaddress, status from khairatmember where status='DELETE AKAUN INI'";
+            ps = con.prepareStatement(sq);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+            %>
+            <tr>
+                <td><%=rs.getString(1)%></td>
+                <td><%=rs.getString(2)%></td>
+                <td><%=rs.getString(3)%></td>
+                <td><%=rs.getString(4)%></td>
+                <td><%=rs.getString(5)%></td>
+                <td><a href='deletemember?memberid=<%=rs.getString(1)%>' class="btn btn-danger" style= "padding:20px;border-radius:20px;font-size:15px; background-color: #e60000" onclick="ConfirmPadam()">Padam Akaun</a>
+                <a href='aktifakaunsemula?memberid=<%=rs.getString(1)%>' class="btn btn-danger" style= "padding:20px;border-radius:20px;font-size:15px; background-color: #e60000" onclick="ConfirmAktif()">Aktifkan Akaun Semula</a></td>
+            </tr>
+            <%
+                }
+            %>
+            
+        </table>
+        </div>
+        </form>
+        
+        </div>
+
+
+
+
 <script>
+function ConfirmPadam()
+{
+  return confirm("Anda pasti untuk padam akaun ini? Akaun ini akan dihapuskan serta merta");
+}
+
+function ConfirmAktif()
+{
+  return confirm("Anda pasti mahukan aktifkan semula akaun ini?");
+}
+
 function ConfirmDelete()
 {
-  return confirm("Are you sure you want to delete?");
+  return confirm("Anda pasti mahu padam penerimaan ini?");
 }
 </script>
 </body>
