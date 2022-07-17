@@ -124,7 +124,7 @@ width:80%;
                 <td>No.K/P: <%=rs.getString(4)%> Nama:<%=rs.getString(5)%></td>
                 <td>RM<%=rs.getString(6)%></td>
                 <td><%=rs.getString(7)%></td>
-                <td><a href='deleteAcceptor?id=<%=rs.getString(1)%>' class="btn btn-danger" style= "padding:20px;border-radius:20px;font-size:15px; background-color: #e60000" onclick="ConfirmDelete()">Delete</a></td>
+                <td><a href='deleteAcceptor?id=<%=rs.getString(1)%>' class="btn btn-danger" style= "padding:6px;border-radius:20px;font-size:15px; background-color: #e60000" onclick="ConfirmDelete()">Delete</a></td>
             </tr>
             <%
                 }
@@ -162,8 +162,8 @@ width:80%;
                 <td><%=rs.getString(3)%></td>
                 <td><%=rs.getString(4)%></td>
                 <td><%=rs.getString(5)%></td>
-                <td><a href='deletemember?memberid=<%=rs.getString(1)%>' class="btn btn-danger" style= "padding:20px;border-radius:20px;font-size:15px; background-color: #e60000" onclick="ConfirmPadam()">Padam Akaun</a>
-                <a href='aktifakaunsemula?memberid=<%=rs.getString(1)%>' class="btn btn-danger" style= "padding:20px;border-radius:20px;font-size:15px; background-color: #e60000" onclick="ConfirmAktif()">Aktifkan Akaun Semula</a></td>
+                <td><a href='deletemember?memberid=<%=rs.getString(1)%>' class="btn btn-danger" style= "padding:6px;border-radius:20px;font-size:15px; background-color: #e60000" onclick="ConfirmPadam()">Padam Akaun</a>
+                <a href='aktifakaunsemula?memberid=<%=rs.getString(1)%>' class="btn btn-danger" style= "padding:6px;border-radius:20px;font-size:15px; background-color: #e60000" onclick="ConfirmAktif()">Aktifkan Akaun Semula</a></td>
             </tr>
             <%
                 }
