@@ -1,4 +1,4 @@
-package PaymentHandler;
+package DonationHandler;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,14 +17,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class displaykhairatpayment
  */
-@WebServlet("/displaykhairatpayment")
-public class displaykhairatpayment extends HttpServlet {
+@WebServlet("/displayDonation")
+public class displayDonation extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public displaykhairatpayment() {
+    public displayDonation() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -47,7 +47,7 @@ public class displaykhairatpayment extends HttpServlet {
             Class.forName("org.postgresql.Driver");
             con = DriverManager.getConnection(dbURL,user,pass);
             st1 = con.createStatement();
-            PreparedStatement ps = con.prepareStatement("SELECT paymentdetail FROM khairatpayment WHERE receiptid=?");
+            PreparedStatement ps = con.prepareStatement("SELECT paymentdetail FROM donation WHERE receiptid=?");
             ps.setString(1, receiptid);
             ResultSet rs = ps.executeQuery();
  

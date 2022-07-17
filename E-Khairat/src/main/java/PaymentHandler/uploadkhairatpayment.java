@@ -7,7 +7,6 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 
@@ -62,7 +61,6 @@ public class uploadkhairatpayment extends HttpServlet {
 	 	HttpSession session=request.getSession(false);
 		String memberID=(String)session.getAttribute("id");
 		Timestamp Datentime = new Timestamp(System.currentTimeMillis());
-		String receiptid = null;
 		
 		InputStream fileContent = filePart.getInputStream();
 		paymentkhairat pay = new paymentkhairat();
@@ -83,6 +81,7 @@ public class uploadkhairatpayment extends HttpServlet {
 			
 			p.executeUpdate();
 			response.sendRedirect("BUAT BAYARAN KHAIRAT.jsp");
+			connection.close();
 			
 		} catch(Exception e) {
 			e.printStackTrace();

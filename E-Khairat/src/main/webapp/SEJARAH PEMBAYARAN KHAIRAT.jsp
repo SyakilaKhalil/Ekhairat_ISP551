@@ -72,15 +72,15 @@ font-size:36px;
             String memberid =(String)session.getAttribute("id");
             session.setAttribute("id",memberid);
             con = DB.getConnection();
-            String sql = "select * from payment where memberid=?";
+            String sql = "select * from khairatpayment where memberid=?";
             ps = con.prepareStatement(sql);
             ps.setString(1, memberid);
             rs = ps.executeQuery();
             while (rs.next()) {
             %>
             <tr>
-                <td><%=rs.getString(3)%></td>
-                <td><%=rs.getTimestamp(2)%></td>
+            	<td><%=rs.getString(5)%></td>
+            	<td><%=rs.getTimestamp(4)%></td>
                 <td><a href="displaykhairatpayment?receiptid=<%=rs.getString(1)%>">Papar</a></td>
             </tr>
             <%

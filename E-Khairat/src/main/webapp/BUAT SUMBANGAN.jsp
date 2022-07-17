@@ -31,17 +31,17 @@
 				<b><a id="linkin" onclick="window.location.href='loginpage.jsp';">LOG KELUAR</a></b>
 			</li>
 			</ul>
-			<form action="uploaddetail" method="post" enctype="multipart/form-data">
+			<form action="uploadDonation" method="post" enctype="multipart/form-data">
 			<h1 id = "muatnaik">MUAT NAIK BUTIRAN TRANSAKSI</h1>
 			<br>
 			<br>
 			<h3>JUMLAH SUMBANGAN: RM</h3>
-			<input type="text" id="donate" name="" required>
+			<input type="number" id="donate" name="donate" required>
 
  			 <div class="button">
  			 	<td>Muat Naik Gambar</td>
-                <input type="file" name="filekhairat" accept="image" required>
-                <input type="hidden" name="action"  value="createPayment">
+                <input type="file" name="filedonation" accept="image" required>
+                <input type="hidden" name="action"  value="createDonation">
                 <input type="submit" value="Submit">
              </div>
   			 <div class="button right">

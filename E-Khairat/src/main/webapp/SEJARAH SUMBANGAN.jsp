@@ -66,7 +66,7 @@ font-size:36px;
         <input type=hidden name="memberID"  value="${memberID}">
         <table border="2">
             <tr>
-                <th>Member KP</th><th>Tarikh Dan Masa</th><th>Papar Resit Transaksi</th>
+                <th>Member KP</th><th>Tarikh Dan Masa</th><th>Jumlah Sumbangan</th><th>Papar Resit Transaksi</th>
             </tr>
             <%
             String memberid =(String)session.getAttribute("id");
@@ -79,9 +79,10 @@ font-size:36px;
             while (rs.next()) {
             %>
             <tr>
-                <td><%=rs.getString(1)%></td>
+                <td><%=rs.getString(5)%></td>
                 <td><%=rs.getTimestamp(4)%></td>
-                <td><a href="displaykhairatpayment?receiptid=<%=rs.getString(1)%>">Papar</a></td>
+                <td>RM<%=rs.getString(6)%></td>
+                <td><a href="displayDonation?receiptid=<%=rs.getString(1)%>">Papar</a></td>
             </tr>
             <%
                 }
