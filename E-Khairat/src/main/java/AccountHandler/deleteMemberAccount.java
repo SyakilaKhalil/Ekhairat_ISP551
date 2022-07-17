@@ -33,21 +33,11 @@ public class deleteMemberAccount extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 
-		PrintWriter out;
-		out.println("<SCRIPT>");
-		out.println("function Confirm() {");
-		out.println("if(confirm("Are you sure you wish to update the database?")) {");
-		out.println("return true;");
-		out.println("}");
-		out.println("return false;");
-		out.println("}");
-		out.println("</SCRIPT>");
 		
 		String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com/dd29m58g7a4tda";
 		String user = "qekmfhbqusidva";
 		String pass = "22cff620d0b06f17950d4f4669a1e0f11f168c04053c0a218b1d83ee130fddb9";
-		String memberid= request.getParameter("id");
+		String memberid= request.getParameter("memberid");
 		String requestaction = "DELETE AKAUN INI";
 		
 		

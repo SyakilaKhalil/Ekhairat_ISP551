@@ -12,6 +12,7 @@
 <meta charset="ISO-8859-1">
 <title>Akaun Pengguna</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="popup.css">
 </head>
 <style>
 
@@ -78,7 +79,7 @@ td {
 	    	<form>
 
 <div class="container" style="height: auto">
-    
+
     <table>
     
     	<tr>
@@ -107,25 +108,41 @@ td {
     	</tr>
     	
     </table>
-    <input type=hidden name="memberid"  value="${id}" >
+    <input type="hidden" name="memberid" value="${id}">
     <button type="submit"  class="button button1" name="submit" onclick="form.action='UPDATE_AKAUNPENGGUNA.jsp'">UPDATE</button>
     <button class="btn btn danger" id="${id}" onclick="showAlert(this)">Delete Account</button>
-    <button type="submit"  class="button button1" name="submit" onclick="form.action='deleteMemberAccount'">Delete</button>
+    <input type="button" class="delete" onclick="document.getElementById('id01').style.display='block'" style="background-color:red;" value="Delete">
 
 </div>
 </form>
 </div>
 </header>
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <form class="modal-content" action="deleteMemberAccount">
+    <div class="modal-container">
+      <h1>Delete Account</h1>
+      <p>Are you sure you want to this account?</p>
+    
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <input type="hidden" name="memberid" value="${id}">
+        <button type="submit" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Delete</button>
+      </div>
+    </div>
+  </form>
+</div>
+
 <script>
-function showAlert(id){
-	console.log(id);
-	var r = confirm("Are you sure want to delete?");
-	if (r ==true){
-		location.href ='deleteMemberAccount?id=' +id;
-		alert("Report successfully deleted");
-	}else{
-		return false;
-	}
+//Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 </script>
 </body>
