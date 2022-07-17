@@ -28,7 +28,7 @@ public void setpaymenttype(String paymenttype) {
 	this.paymenttype = paymenttype;
 }
 public Timestamp getdatentime() {
-	return datentime;
+	return datentime; 
 }
 public void setdatentime(Timestamp datentime) {
 	this.datentime = datentime;
