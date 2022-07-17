@@ -78,8 +78,6 @@ td {
 	    	<form action="KhairatmemberHandler" method="post">
 
 <div class="container" style="height: auto">
-
-    <input type=hidden name="memberid"  value="${id}" >
     
     <table>
     
@@ -108,74 +106,28 @@ td {
     	<td>${email}</td>
     	</tr>
     	
-    	<tr>
-    	<th>PASSWORD:</th>
-    	<td>${password}</td>
-    	
-    	</tr>
-    	
     </table>
+    <input type=hidden name="memberid"  value="${id}" >
+    <button type="submit"  class="button button1" name="submit" onclick="form.action='UPDATE_AKAUNPENGGUNA.jsp'">UPDATE</button>
     <input type="hidden" name="action" value="delete">
-     <button type="submit"  class="button button1" name="submit" onclick="form.action='UPDATE_AKAUNPENGGUNA.jsp'">UPDATE</button>
-
-    <%--<div class="row">
-        <div class="col-25">
-            <label>NAMA:</label>
-            
-        </div>
-        <div class="col-75">
-            <label>${name}</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-25">
-            <label>NOMBOR KAD PENGENALAN</label>
-        </div>
-        <div class="col-75">
-            <label>${id}</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-25">
-            <label>NOMBOR TELEFON</label>
-        </div>
-        <div class="col-75">
-            <label>${contact}</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-25">
-            <label>ALAMAT</label>
-        </div>
-        <div class="col-75">
-            <label>${address}</label>
-        </div>
-        </div>
-    <div class="row">
-        <div class="col-25">
-            <label>EMAIL</label>
-        </div>
-        <div class="col-75">
-            <label>${email}</label>
-        </div>
-        </div>
-    <div class="row">
-        <div class="col-25">
-            <label>PASSWORD</label>
-        </div>
-        <div class="col-75">
-            <label>${password}</label>
-        </div>
-        </div>--%>
-
-
-
-
+	<button id="<c:out value="${i.id}"/>" onclick="showAlert(this.id)">PERMINTAAN UNTUK DELETE AKAUN</button>
 
 </div>
 </form>
 </div>
  
 </header>
+<script>
+function showAlert(id){
+	console.log(id);
+	var r = confirm("Are you sure want to delete?");
+	if (r ==true){
+		location.href ='deleteMemberAccount?id=' +id;
+		alert("Report successfully deleted");
+	}else{
+		return false;
+	}
+}
+	</script>
 </body>
 </html>
