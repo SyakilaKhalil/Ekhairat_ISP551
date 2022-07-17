@@ -54,7 +54,7 @@ width:80%;
                 <b><a id="linkin" onclick="window.location.href='penggesahan_bayaran.jsp';">PENGESAHAN PEMBAYARAN</a></b>
             </li>
             <li id="link">
-                <b><a id="linkin" onclick="window.location.href='.jsp';">KHAIRAT</a></b>
+                <b><a id="linkin" onclick="window.location.href='khairatacceptor.jsp';">KHAIRAT</a></b>
             </li>
             <li id="log" class="log">
                 <b><a id="linkin" onclick="window.location.href='staff.index.jsp';">LOG KELUAR</a></b>

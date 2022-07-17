@@ -28,26 +28,23 @@
         <div class="topheader"></div>
         <img class="banner" src="Screenshot_243.jpg">
         <ul class="bar">
-             <li id="link2">
-                <b><a id="linkin2" onclick="window.location.href='HOMEPAGE_STAFF.jsp';">HALAMAN UTAMA</a></b>
+             <li id="link">
+                <b><a id="linkin" onclick="window.location.href='HOMEPAGE_STAFF.jsp';">HALAMAN UTAMA</a></b>
             </li>
-            <li id="link2">
-                <b><a id="linkin2" onclick="window.location.href='AKAUN_STAFF.jsp';">AKAUN PENGGUNA</a></b>
+            <li id="link">
+                <b><a id="linkin" onclick="window.location.href='AKAUN_STAFF.jsp';">AKAUN PENGGUNA</a></b>
             </li>
-            <li id="link2">
-                <b><a id="linkin2" onclick="window.location.href='.jsp';">LAPORAN</a></b>
+            <li id="link">
+                <b><a id="linkin" onclick="window.location.href='laporan.jsp';">LAPORAN</a></b>
             </li>
-            <li id="link2">
-                <b><a id="linkin2" onclick="window.location.href='penggesahan_bayaran.jsp';">PENGESAHAN PEMBAYARAN</a></b>
+            <li id="link">
+                <b><a id="linkin" onclick="window.location.href='penggesahan_bayaran.jsp';">PENGESAHAN PEMBAYARAN</a></b>
             </li>
-            <li id="link2">
-                <b><a id="linkin2" onclick="window.location.href='.jsp';">PENERIMAAN KHAIRAT</a></b>
-            </li>
-            <li id="link2">
-                <b><a id="linkin2" onclick="window.location.href='.jsp';">PENGURUSAN AKTIVITI</a></b>
+            <li id="link">
+                <b><a id="linkin" onclick="window.location.href='khairatacceptor.jsp';">KHAIRAT</a></b>
             </li>
             <li id="log" class="log">
-                <b><a id="linkin2" onclick="window.location.href='staff.index.jsp';">LOG KELUAR</a></b>
+                <b><a id="linkin" onclick="window.location.href='staff.index.jsp';">LOG KELUAR</a></b>
             </li>
         </ul>
 

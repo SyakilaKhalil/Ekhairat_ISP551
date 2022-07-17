@@ -29,22 +29,23 @@
 		<img class="banner" src="Screenshot_243.jpg">
 		<ul class="bar">
 			<li id="link">
-				<b><a id="linkin" onclick="window.location.href='HOMEPAGE_STAFF.jsp';">HALAMAN UTAMA</a></b>
-			</li>
-			<li id="link">
-				<b><a id="linkin" onclick="window.location.href='AKAUN_STAFF.jsp';">AKAUN PENGGUNA</a></b>
-			</li>
-			<li id="link">
-				<b><a id="linkin" onclick="window.location.href='laporan.jsp';">LAPORAN</a></b>
-			</li><li id="link">
-				<b><a id="linkin" onclick="window.location.href='.jsp';" >PENGESAHAN PEMBAYARAN</a></b>
-			</li>
-			<li id="link">
-				<b><a id="linkin" onclick="window.location.href='.jsp';" >KHAIRAT</a></b>
-			</li>
-			<li id="log" class="log">
-				<b><a id="linkin" onclick="window.location.href='staff.index.jsp';">LOG KELUAR</a></b>
-			</li>
+                <b><a id="linkin" onclick="window.location.href='HOMEPAGE_STAFF.jsp';">HALAMAN UTAMA</a></b>
+            </li>
+            <li id="link">
+                <b><a id="linkin" onclick="window.location.href='AKAUN_STAFF.jsp';">AKAUN PENGGUNA</a></b>
+            </li>
+            <li id="link">
+                <b><a id="linkin" onclick="window.location.href='laporan.jsp';">LAPORAN</a></b>
+            </li>
+            <li id="link">
+                <b><a id="linkin" onclick="window.location.href='penggesahan_bayaran.jsp';">PENGESAHAN PEMBAYARAN</a></b>
+            </li>
+            <li id="link">
+                <b><a id="linkin" onclick="window.location.href='khairatacceptor.jsp';">KHAIRAT</a></b>
+            </li>
+            <li id="log" class="log">
+                <b><a id="linkin" onclick="window.location.href='staff.index.jsp';">LOG KELUAR</a></b>
+            </li>
 		</ul>
 		<br>
 		<div class="report">
