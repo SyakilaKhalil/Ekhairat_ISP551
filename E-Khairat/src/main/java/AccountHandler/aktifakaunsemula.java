@@ -37,7 +37,7 @@ public class aktifakaunsemula extends HttpServlet {
 		String user = "qekmfhbqusidva";
 		String pass = "22cff620d0b06f17950d4f4669a1e0f11f168c04053c0a218b1d83ee130fddb9";
 		String memberid= request.getParameter("memberid");
-		String requestaction = "Aktif";
+		String requestaction = "aktif";
 		
 		
 		try {
