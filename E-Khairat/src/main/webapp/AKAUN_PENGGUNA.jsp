@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <% if(session.getAttribute("id")==null)
 	response.sendRedirect("index.jsp");
@@ -75,7 +75,7 @@ td {
 	    <br><br><br>
 	    <div class="scroll">
 
-	    	<form action="KhairatmemberHandler" method="post">
+	    	<form>
 
 <div class="container" style="height: auto">
     
@@ -109,13 +109,12 @@ td {
     </table>
     <input type=hidden name="memberid"  value="${id}" >
     <button type="submit"  class="button button1" name="submit" onclick="form.action='UPDATE_AKAUNPENGGUNA.jsp'">UPDATE</button>
-    <input type="hidden" name="action" value="delete">
-	<button id="<c:out value="${i.id}"/>" onclick="showAlert(this.id)">PERMINTAAN UNTUK DELETE AKAUN</button>
+    <button class="btn btn danger" id="${id}" onclick="showAlert(this)">Delete Account</button>
+    <button type="submit"  class="button button1" name="submit" onclick="form.action='deleteMemberAccount'">Delete</button>
 
 </div>
 </form>
 </div>
- 
 </header>
 <script>
 function showAlert(id){
@@ -128,6 +127,6 @@ function showAlert(id){
 		return false;
 	}
 }
-	</script>
+</script>
 </body>
 </html>
