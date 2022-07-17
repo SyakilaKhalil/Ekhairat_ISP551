@@ -39,7 +39,7 @@
 				<b><a id="s_subangan" onclick="window.location.href='BUAT BAYARAN KHAIRAT.jsp';">BUAT BAYARAN KHAIRAT</a></b>
 			</li>
 			<li id="link1">
-				<b><a id="s_subangan" onclick="window.location.href='BUAT SUMBNAGAN.jsp';">BUAT SUMBANGAN</a></b>
+				<b><a id="s_subangan" onclick="window.location.href='BUAT SUMBANGAN.jsp';">BUAT SUMBANGAN</a></b>
 			</li>
 		</ul>		
 	    </div>
