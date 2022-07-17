@@ -23,7 +23,7 @@ th,tr{
 text-align: center;
 }
 table{
-width:80%;
+width:100%;
  border-collapse: collapse;
   border-radius: 1em;
   overflow: hidden;
