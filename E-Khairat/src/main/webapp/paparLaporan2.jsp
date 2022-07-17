@@ -31,6 +31,10 @@ width:80%;
   border-radius: 1em;
   overflow: hidden;
 }
+h1{
+font-color:black;
+font-size:28;
+}
 </style>
 <body>
 <%
