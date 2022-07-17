@@ -24,7 +24,7 @@ public class displaykhairatpayment extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public displaykhairatpayment() {
+    public  displaykhairatpayment() {
         super();
         // TODO Auto-generated constructor stub
     }
