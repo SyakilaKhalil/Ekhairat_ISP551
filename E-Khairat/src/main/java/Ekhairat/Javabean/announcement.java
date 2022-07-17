@@ -27,4 +27,4 @@ public class announcement {
 	public void setstaffid(String staffid) {
 		this.staffid= staffid;
 	}
-}
+} 
