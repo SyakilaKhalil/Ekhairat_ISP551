@@ -40,7 +40,6 @@
  			 	<td>Upload File</td>
                 <input type="file" name="filekhairat" accept="image" required>
                 <input type="hidden" name="action"  value="createPayment">
-                <input type="hidden" name=""  value="">
                 <input type="submit" value="Submit">
              </div>
   			 <div class="button right">

@@ -46,9 +46,6 @@ public class uploadkhairatpayment extends HttpServlet {
 			case "createPayment": 
 				createPayment(request,response);
 			break;
-			case "createPaymentdetail": 
-				createPaymentdetail(request,response);
-			break;
 			}
 		}
 		catch (SQLException e) {
@@ -78,29 +75,11 @@ public class uploadkhairatpayment extends HttpServlet {
 			Class.forName("org.postgresql.Driver");
 			Connection connection = DriverManager.getConnection(dbUrl,username,password);
 			
-			//SQL Statement/Query 
-			PreparedStatement pst = connection.prepareStatement("insert into khairatpayment(datentime,memberid) values(?,?)");
-			// Set string - set for ? by order
-			pst.setTimestamp(1, Datentime);
-			pst.setString(2, memberID);
-			
-			pst.executeUpdate();
-			
-			PreparedStatement ps = connection.prepareStatement("select * from khairatpayment where memberid=?");
-			ps.setString(1, memberID);
-			
-			ResultSet result = ps.executeQuery();
-			while(result.next()) {
-				receiptid = result.getString("receiptid");
-			}
-			
-			
-			PreparedStatement p = connection.prepareStatement("insert into payment(datentime,memberid,paymentdetail,paymenttype,receiptid) values(?,?,?,?,?)");
-			p.setTimestamp(1, Datentime);
-			p.setString(2, memberID);
-			p.setBinaryStream(3, fileContent);
-			p.setString(4, paymenttype);
-			p.setString(5, receiptid);
+			PreparedStatement p = connection.prepareStatement("insert into khairatpayment(paymentdetail,paymenttype,datentime,memberid) values(?,?,?,?)");
+			p.setBinaryStream(1, fileContent);
+			p.setString(2, paymenttype);
+			p.setTimestamp(3, Datentime);
+			p.setString(4, memberID);
 			
 			p.executeUpdate();
 			response.sendRedirect("BUAT BAYARAN KHAIRAT.jsp");
@@ -109,8 +88,8 @@ public class uploadkhairatpayment extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
- 		
-		private void createPaymentdetail(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+}
+		/*private void createPaymentdetail(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 			// TODO Auto-generated method stub
 			FileInputStream fis=null; 
 		 	Part filePart =request.getPart("fileKhairat");  
@@ -141,5 +120,4 @@ public class uploadkhairatpayment extends HttpServlet {
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
-		}
-}
+		}*/
