@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import Ekhairat.Javabean.Khairatmember;
 
 
@@ -41,7 +43,6 @@ public class KhairatMemberDA {
     }
 	//untuk create member account
 	public void createKhairatmember (Khairatmember mem) throws SQLException {
-
         // try-with-resource statement will auto close the connection.
         try (Connection con = getConnection();
              PreparedStatement preparedStatement = con.prepareStatement("insert into khairatmember(membername,memberid,membercontactno,memberaddress,memberemail,memberpassword) values(?,?,?,?,?,?)"))

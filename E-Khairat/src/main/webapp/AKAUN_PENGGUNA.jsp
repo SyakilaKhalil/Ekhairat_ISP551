@@ -12,7 +12,6 @@
 <meta charset="ISO-8859-1">
 <title>Akaun Pengguna</title>
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="popup.css">
 </head>
 <style>
 
@@ -110,40 +109,18 @@ td {
     </table>
     <input type="hidden" name="memberid" value="${id}">
     <button type="submit"  class="button button1" name="submit" onclick="form.action='UPDATE_AKAUNPENGGUNA.jsp'">UPDATE</button>
-    <button class="btn btn danger" id="${id}" onclick="showAlert(this)">Delete Account</button>
-    <input type="button" class="delete" onclick="document.getElementById('id01').style.display='block'" style="background-color:red;" value="Delete">
-
+	<a href='deleteMemberAccount?memberid=${id}' class="btn btn-danger" style= "padding:20px;border-radius:20px;font-size:15px; background-color: #e60000" onclick="ConfirmDelete()">Delete</a>
 </div>
 </form>
 </div>
 </header>
 
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-  <form class="modal-content" action="deleteMemberAccount">
-    <div class="modal-container">
-      <h1>Delete Account</h1>
-      <p>Are you sure you want to this account?</p>
-    
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <input type="hidden" name="memberid" value="${id}">
-        <button type="submit" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Delete</button>
-      </div>
-    </div>
-  </form>
-</div>
-
 <script>
-//Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+function ConfirmDelete()
+{
+  return confirm("Anda pasti mahu tutup akaun anda? Jika ubah fikiran kemudian, sila hubungi pihak surau");
 }
+
 </script>
 </body>
 </html>

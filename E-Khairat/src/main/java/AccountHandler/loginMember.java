@@ -21,6 +21,7 @@ public class loginMember extends HttpServlet {
 		
 		String memberid = request.getParameter("nomborkp");
 		String memberpassword = request.getParameter("pass");
+		String requestaction = "aktif";
 		
 		//Create session
 		HttpSession session = request.getSession();
@@ -39,12 +40,12 @@ public class loginMember extends HttpServlet {
 			
 			
 			//SQL Statement/Query 
-			PreparedStatement pst = connection.prepareStatement("select * from khairatmember where memberid = ? and memberpassword = ?");
+			PreparedStatement pst = connection.prepareStatement("select * from khairatmember where memberid = ? and memberpassword = ? and request = ?");
 			
 			// Set string - set for ? by order
 			pst.setString(1, memberid);
 			pst.setString(2, memberpassword);
-			
+			pst.setString(3, requestaction);
 			
 			// Execute Query Method
 			ResultSet result = pst.executeQuery();

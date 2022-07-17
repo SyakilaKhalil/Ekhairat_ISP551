@@ -122,65 +122,18 @@ td {
     </table>
     <input type="hidden" name="action" value="delete">
      <button type="submit"  class="button button1" name="submit" onclick="form.action='UPDATE_AKAUNSTAFF.jsp'">UPDATE</button>
-
-    <%--<div class="row">
-        <div class="col-25">
-            <label>NAMA:</label>
-            
-        </div>
-        <div class="col-75">
-            <label>${name}</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-25">
-            <label>NOMBOR KAD PENGENALAN</label>
-        </div>
-        <div class="col-75">
-            <label>${id}</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-25">
-            <label>NOMBOR TELEFON</label>
-        </div>
-        <div class="col-75">
-            <label>${contact}</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-25">
-            <label>ALAMAT</label>
-        </div>
-        <div class="col-75">
-            <label>${address}</label>
-        </div>
-        </div>
-    <div class="row">
-        <div class="col-25">
-            <label>EMAIL</label>
-        </div>
-        <div class="col-75">
-            <label>${email}</label>
-        </div>
-        </div>
-    <div class="row">
-        <div class="col-25">
-            <label>PASSWORD</label>
-        </div>
-        <div class="col-75">
-            <label>${password}</label>
-        </div>
-        </div>--%>
-
-
-
-
-
+	<a href='deleteStaffAccount?staffid=${id}' class="btn btn-danger" style= "padding:20px;border-radius:20px;font-size:15px; background-color: #e60000" onclick="ConfirmDelete()">Delete</a>
 </div>
 </form>
 </div>
  
 </header>
+<script>
+function ConfirmDelete()
+{
+  return confirm("Anda pasti mahu tutup akaun anda? Akaun ini akan dihapuskan serta merta");
+}
+
+</script>
 </body>
 </html>
