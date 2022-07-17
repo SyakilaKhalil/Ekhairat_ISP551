@@ -76,7 +76,7 @@
                 <td><%=rs.getString(3)%></td>
                 <td><%=rs.getTimestamp(4)%></td>
                 <td><a href="displaykhairatpayment?receiptid=<%=rs.getString(1)%>">Papar</a></td>
-                <td><a href="updatestatusbayaran?receiptid=<%=rs.getString(1)%>">Sahkan Bayaran</a></td>
+                <td><a href="updatestatusbayaran?receiptid=<%=rs.getString(1)%>"onclick="ConfirmDelete()">Sahkan Bayaran</a></td>
             </tr>
             <%
             	}
@@ -87,5 +87,12 @@
 </div>
 </div>
     </header>
+    <script>
+function ConfirmDelete()
+{
+  return confirm("Anda pasti untuk detail adalah benar?");
+}
+
+</script>
 </body>
 </html>
