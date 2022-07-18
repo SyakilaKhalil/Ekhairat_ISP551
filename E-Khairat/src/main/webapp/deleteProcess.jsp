@@ -5,10 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
+<style>
 body{
+background-color:#ffe699;
 text-align:center;
-background-color: #ffe699;
 }
 </style>
 </head>
