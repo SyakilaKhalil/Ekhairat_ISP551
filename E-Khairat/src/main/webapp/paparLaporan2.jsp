@@ -131,7 +131,7 @@ font-size:28;
                 %>
                 <h1 style="font-color:black">Total Khairat Disahkan payment RM<%=totalsah %></h1>
             <%}
-                String s = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2021-01-01 00:00:00' and datentime <= timestamp '2021-12-31 00:00:00' and status='Pending'";
+                String s = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2020-01-01 00:00:00' and datentime <= timestamp '2020-12-31 00:00:00' and status='Pending'";
                 p = con.prepareStatement(sq);
                 r = p.executeQuery();
                 String total="";
@@ -164,14 +164,23 @@ font-size:28;
                 <%
                 }
                 %> </table> <%
-                String sq = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2021-01-01 00:00:00' and datentime <= timestamp '2021-12-31 00:00:00'";
+                String sq = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2021-01-01 00:00:00' and datentime <= timestamp '2021-12-31 00:00:00' and status='Disahkan'";
+                p = con.prepareStatement(sq);
+                r = p.executeQuery();
+                String totalsah="";
+                while(r.next()){
+                totalsah = r.getString(1);
+                %>
+                <h1 style="font-color:black">Total Khairat payment RM:<%=totalsah %></h1>
+            <%}
+                String s = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2021-01-01 00:00:00' and datentime <= timestamp '2021-12-31 00:00:00' and status='Pending'";
                 p = con.prepareStatement(sq);
                 r = p.executeQuery();
                 String total="";
                 while(r.next()){
                 total = r.getString(1);
                 %>
-                <h1 style="font-color:black">Total Khairat payment RM:<%=total %></h1>
+                <h1 style="font-color:black">Total Khairat Belum Disahkan payment RM:<%=total %></h1>
             <%}
        
             }else if(year.equalsIgnoreCase("2022")){
@@ -197,15 +206,23 @@ font-size:28;
                 <%
                 }
                 %> </table> <%
-                String sq = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2022-01-01 00:00:00' and datentime <= timestamp '2022-12-31 00:00:00'";
+                String sq = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2022-01-01 00:00:00' and datentime <= timestamp '2022-12-31 00:00:00' and status='Disahkan'";
                 p = con.prepareStatement(sq);
                 r = p.executeQuery();
-                String total="";
+                String totalsah="";
                 while(r.next()){
-                total = r.getString(1);
+                totalsah = r.getString(1);
                 %>
-                <h1 style="font-color:black">Total Khairat payment RM:<%=total %></h1>
-            <%}
+                <h1 style="font-color:black">Total Khairat payment RM:<%=totalsah %></h1>
+            <%}  String s = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2022-01-01 00:00:00' and datentime <= timestamp '2022-12-31 00:00:00' and status='Pending'";
+            	p = con.prepareStatement(sq);
+            	r = p.executeQuery();
+            	String total="";
+            	while(r.next()){
+            	total = r.getString(1);
+            	%>
+            	<h1 style="font-color:black">Total Khairat Belum Disahkan payment RM:<%=total %></h1>
+        	<%}
             }}
             else if(jenis.equalsIgnoreCase("Sumbangan")){
             	if (year.equalsIgnoreCase("2020")){
