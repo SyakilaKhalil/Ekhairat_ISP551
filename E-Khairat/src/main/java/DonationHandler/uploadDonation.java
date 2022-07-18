@@ -81,7 +81,7 @@ public class uploadDonation extends HttpServlet {
 					p.setFloat(5, donate);
 					
 					p.executeUpdate();
-					response.sendRedirect("BUAT SUMBANGAN.jsp");
+					response.sendRedirect("sucess.jsp");
 					connection.close();
 					p.close();
 					

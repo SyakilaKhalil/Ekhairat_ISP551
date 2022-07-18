@@ -80,7 +80,7 @@ public class uploadkhairatpayment extends HttpServlet {
 			p.setString(4, memberID);
 			
 			p.executeUpdate();
-			response.sendRedirect("BUAT BAYARAN KHAIRAT.jsp");
+			response.sendRedirect("sucess.jsp");
 			connection.close();
 			
 		} catch(Exception e) {
