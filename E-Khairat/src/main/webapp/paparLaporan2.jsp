@@ -128,7 +128,7 @@ width:80%;
                 while(r.next()){
                 totalsah = r.getString(1);
                 %>
-                <p style="font-color:black, font-size:30px">Total Khairat Disahkan payment RM<%=totalsah %></p>
+                <p style="font-color:black, font-size:30px">Jumlah Bayaran Khairat Disahkan RM:<%=totalsah %></p>
             <%}
                 String s = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2020-01-01 00:00:00' and datentime <= timestamp '2020-12-31 00:00:00' and status='Pending'";
             	a = con.prepareStatement(s);
@@ -137,7 +137,7 @@ width:80%;
             	while(sa.next()){
             	total = sa.getString(1);
             	%>
-            	<p style="font-color:black, font-size:30px" >Total Khairat Belum Disahkan payment RM:<%=total %></p>
+            	<p style="font-color:black, font-size:30px" >Jumlah Bayaran Khairat Belum Disahkan RM:<%=total %></p>
         	<%}
                 
             }else if(year.equalsIgnoreCase("2021")){
@@ -170,7 +170,7 @@ width:80%;
                 while(r.next()){
                 totalsah = r.getString(1);
                 %>
-                <p style="font-color:black, font-size:30px">Total Khairat payment RM:<%=totalsah %></p>
+                <p style="font-color:black, font-size:30px">Jumlah Bayaran Khairat Disahkan RM:<%=totalsah %></p>
             <%}
                 String s = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2021-01-01 00:00:00' and datentime <= timestamp '2021-12-31 00:00:00' and status='Pending'";
             	a = con.prepareStatement(s);
@@ -179,7 +179,7 @@ width:80%;
             	while(sa.next()){
             	total = sa.getString(1);
             	%>
-            	<p style="font-color:black, font-size:30px">Total Khairat Belum Disahkan payment RM:<%=total %></p>
+            	<p style="font-color:black, font-size:30px">Jumlah Bayaran Khairat Belum Disahkan RM:<%=total %></p>
         	<%}
        
             }else if(year.equalsIgnoreCase("2022")){
@@ -212,7 +212,7 @@ width:80%;
                 while(r.next()){
                 totalsah = r.getString(1);
                 %>
-                <p style="font-color:black, font-size:30px">Total Khairat payment RM:<%=totalsah %></p>
+                <p style="font-color:black, font-size:30px">Jumlah Bayaran Khairat Disahkan RM:<%=totalsah %></p>
             <%}  String s = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2022-01-01 00:00:00' and datentime <= timestamp '2022-12-31 00:00:00' and status='Pending'";
             	a = con.prepareStatement(s);
             	sa = a.executeQuery();
@@ -220,7 +220,7 @@ width:80%;
             	while(sa.next()){
             	total = sa.getString(1);
             	%>
-            	<p style="font-color:black, font-size:30px">Total Khairat Belum Disahkan payment RM:<%=total %></p>
+            	<p style="font-color:black, font-size:30px">Jumlah Bayaran Khairat Belum Disahkan RM:<%=total %></p>
         	<%}
             }}
             else if(jenis.equalsIgnoreCase("Sumbangan")){
@@ -254,7 +254,7 @@ width:80%;
                     while(r.next()){
                     total = r.getString(1);
                     %>
-                    <p style="font-color:black, font-size:30px">Total sumbangan RM:<%=total %></p>
+                    <p style="font-color:black, font-size:30px">Jumlah Sumbangan RM:<%=total %></p>
                 <%}
                     
                 }else if(year.equalsIgnoreCase("2021")){
@@ -287,7 +287,7 @@ width:80%;
                     while(r.next()){
                     total = r.getString(1);
                     %>
-                    <p style="font-color:black, font-size:30px">Total sumbangan RM:<%=total %></p>
+                    <p style="font-color:black, font-size:30px">Jumlah Sumbangan RM:<%=total %></p>
                 <%}
            
                 }else if(year.equalsIgnoreCase("2022")){
@@ -320,7 +320,7 @@ width:80%;
                     while(r.next()){
                     total = r.getString(1);
                     %>
-                    <p style="font-color:black, font-size:30px">Total sumbangan RM:<%=total %></p>
+                    <p style="font-color:black, font-size:30px">Jumlah Sumbangan RM:<%=total %></p>
                 <%}
                 }
             }
