@@ -122,7 +122,6 @@ td {
     </table>
     <input type="hidden" name="action" value="delete">
      <button type="submit"  class="button button1" name="submit" onclick="form.action='UPDATE_AKAUNSTAFF.jsp'">UPDATE</button>
-	<a href='deleteStaffAccount?staffid=${id}' class="deleteakaunstaff" style= "padding:20px;border-radius:20px;font-size:15px; background-color: #e60000">Delete</a>
 </div>
 </form>
 </div>
