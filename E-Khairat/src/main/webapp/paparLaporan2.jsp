@@ -80,6 +80,8 @@ font-size:28;
             ResultSet rs = null;
             PreparedStatement p = null;
             ResultSet r = null;
+            PreparedStatement a = null;
+            ResultSet sa = null;
         %>
         <br><br><br>
         <div class="scroll">
@@ -106,7 +108,7 @@ font-size:28;
                 rs = ps.executeQuery();
                 %> <table border="2">
             	<tr>
-                <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Status Bayaran</th>
+                <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Status</th>
             	</tr> <%
                 while (rs.next()) {
                 %>
@@ -132,14 +134,14 @@ font-size:28;
                 <h1 style="font-color:black">Total Khairat Disahkan payment RM<%=totalsah %></h1>
             <%}
                 String s = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2020-01-01 00:00:00' and datentime <= timestamp '2020-12-31 00:00:00' and status='Pending'";
-                p = con.prepareStatement(sq);
-                r = p.executeQuery();
-                String total="";
-                while(r.next()){
-                total = r.getString(1);
-                %>
-                <h1 style="font-color:black">Total Khairat Belum Disahkan payment RM:<%=total %></h1>
-            <%}
+            	a = con.prepareStatement(s);
+            	sa = a.executeQuery();
+            	String total="";
+            	while(sa.next()){
+            	total = sa.getString(1);
+            	%>
+            	<h1 style="font-color:black">Total Khairat Belum Disahkan payment RM:<%=total %></h1>
+        	<%}
                 
             }else if(year.equalsIgnoreCase("2021")){
             	con = DB.getConnection();
@@ -148,7 +150,7 @@ font-size:28;
                 rs = ps.executeQuery();
                 %> <table border="2">
             	<tr>
-                <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Status Bayaran</th>
+                <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Status Bayaran</th>
             	</tr> <%
                 while (rs.next()) {
                 %>
@@ -174,14 +176,14 @@ font-size:28;
                 <h1 style="font-color:black">Total Khairat payment RM:<%=totalsah %></h1>
             <%}
                 String s = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2021-01-01 00:00:00' and datentime <= timestamp '2021-12-31 00:00:00' and status='Pending'";
-                p = con.prepareStatement(sq);
-                r = p.executeQuery();
-                String total="";
-                while(r.next()){
-                total = r.getString(1);
-                %>
-                <h1 style="font-color:black">Total Khairat Belum Disahkan payment RM:<%=total %></h1>
-            <%}
+            	a = con.prepareStatement(s);
+            	sa = a.executeQuery();
+            	String total="";
+            	while(sa.next()){
+            	total = sa.getString(1);
+            	%>
+            	<h1 style="font-color:black">Total Khairat Belum Disahkan payment RM:<%=total %></h1>
+        	<%}
        
             }else if(year.equalsIgnoreCase("2022")){
             	con = DB.getConnection();
@@ -190,7 +192,7 @@ font-size:28;
                 rs = ps.executeQuery();
                 %> <table border="2">
             	<tr>
-                <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Status Bayaran</th>
+                <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Status Bayaran</th>
             	</tr> <%
                 while (rs.next()) {
                 %>
@@ -215,11 +217,11 @@ font-size:28;
                 %>
                 <h1 style="font-color:black">Total Khairat payment RM:<%=totalsah %></h1>
             <%}  String s = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2022-01-01 00:00:00' and datentime <= timestamp '2022-12-31 00:00:00' and status='Pending'";
-            	p = con.prepareStatement(sq);
-            	r = p.executeQuery();
+            	a = con.prepareStatement(s);
+            	sa = a.executeQuery();
             	String total="";
-            	while(r.next()){
-            	total = r.getString(1);
+            	while(sa.next()){
+            	total = sa.getString(1);
             	%>
             	<h1 style="font-color:black">Total Khairat Belum Disahkan payment RM:<%=total %></h1>
         	<%}
@@ -227,12 +229,12 @@ font-size:28;
             else if(jenis.equalsIgnoreCase("Sumbangan")){
             	if (year.equalsIgnoreCase("2020")){
                 	con = DB.getConnection();
-                	String sql = "select receiptid, memberid, membername, datentime, status from donation join khairatmember using (memberid) where datentime >= timestamp '2020-01-01 00:00:00' and datentime <= timestamp '2020-12-31 00:00:00'";
+                	String sql = "select receiptid, memberid, membername, datentime, paymentdetail, donationvalue from donation join khairatmember using (memberid) where datentime >= timestamp '2020-01-01 00:00:00' and datentime <= timestamp '2020-12-31 00:00:00'";
                     ps = con.prepareStatement(sql);
                     rs = ps.executeQuery();
                     %> <table border="2">
                 	<tr>
-                    <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Status Bayaran</th>
+                    <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Jumlah Sumbangan</th>
                 	</tr> <%
                     while (rs.next()) {
                     %>
@@ -241,30 +243,31 @@ font-size:28;
                         <td><%=rs.getString(2)%></td>
                         <td><%=rs.getString(3)%></td>
                         <td><%=rs.getTimestamp(4)%></td>
-                        <td><%=rs.getString(5)%></td>
+                        <td><a href="displaykhairatpayment?receiptid=<%=rs.getString(1)%>">Papar</a></td>
+                        <td><%=rs.getInt(6)%></td>
                     </tr>
                     
                     <%
                     }
                     %> </table> <%
-                    String sq = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2020-01-01 00:00:00' and datentime <= timestamp '2020-12-31 00:00:00'";
+                    String sq = "select sum(donationvalue) from donation where datentime >= timestamp '2020-01-01 00:00:00' and datentime <= timestamp '2020-12-31 00:00:00'";
                     p = con.prepareStatement(sq);
                     r = p.executeQuery();
                     String total="";
                     while(r.next()){
                     total = r.getString(1);
                     %>
-                    <h1 style="font-color:black">Total Khairat payment RM:<%=total %></h1>
+                    <h1 style="font-color:black">Total sumbangan RM:<%=total %></h1>
                 <%}
                     
                 }else if(year.equalsIgnoreCase("2021")){
                 	con = DB.getConnection();
-                	String sql = "select receiptid, memberid, membername, datentime, status from khairatpayment join khairatmember using (memberid) where datentime >= timestamp '2021-01-01 00:00:00' and datentime <= timestamp '2021-12-31 00:00:00'";
+                	String sql = "select receiptid, memberid, membername, datentime, paymentdetail, donationvalue from donation join khairatmember using (memberid) where datentime >= timestamp '2021-01-01 00:00:00' and datentime <= timestamp '2021-12-31 00:00:00'";
                     ps = con.prepareStatement(sql);
                     rs = ps.executeQuery();
                     %> <table border="2">
                 	<tr>
-                    <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Status Bayaran</th>
+                    <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Jumlah Sumbangan</th>
                 	</tr> <%
                     while (rs.next()) {
                     %>
@@ -273,30 +276,31 @@ font-size:28;
                         <td><%=rs.getString(2)%></td>
                         <td><%=rs.getString(3)%></td>
                         <td><%=rs.getTimestamp(4)%></td>
-                        <td><%=rs.getString(5)%></td>
+                        <td><a href="displaykhairatpayment?receiptid=<%=rs.getString(1)%>">Papar</a></td>
+                        <td><%=rs.getInt(6)%></td>
                     </tr>
                     
                     <%
                     }
                     %> </table> <%
-                    String sq = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2021-01-01 00:00:00' and datentime <= timestamp '2021-12-31 00:00:00'";
+                    String sq = "select sum(donationvalue) from donation where datentime >= timestamp '2021-01-01 00:00:00' and datentime <= timestamp '2021-12-31 00:00:00'";
                     p = con.prepareStatement(sq);
                     r = p.executeQuery();
                     String total="";
                     while(r.next()){
                     total = r.getString(1);
                     %>
-                    <h1 style="font-color:black">Total Khairat payment RM:<%=total %></h1>
+                    <h1 style="font-color:black">Total sumbangan RM:<%=total %></h1>
                 <%}
            
                 }else if(year.equalsIgnoreCase("2022")){
                 	con = DB.getConnection();
-                	String sql = "select receiptid, memberid, membername, datentime, status from khairatpayment join khairatmember using (memberid) where datentime >= timestamp '2022-01-01 00:00:00' and datentime <= timestamp '2022-12-31 00:00:00'";
+                	String sql = "select receiptid, memberid, membername, datentime, paymentdetail, donationvalue from donation join khairatmember using (memberid) where datentime >= timestamp '2022-01-01 00:00:00' and datentime <= timestamp '2022-12-31 00:00:00'";
                     ps = con.prepareStatement(sql);
                     rs = ps.executeQuery();
                     %> <table border="2">
                 	<tr>
-                    <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Status Bayaran</th>
+                    <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Jumlah Sumbangan</th>
                 	</tr> <%
                     while (rs.next()) {
                     %>
@@ -305,20 +309,21 @@ font-size:28;
                         <td><%=rs.getString(2)%></td>
                         <td><%=rs.getString(3)%></td>
                         <td><%=rs.getTimestamp(4)%></td>
-                        <td><%=rs.getString(5)%></td>
+                        <td><a href="displaykhairatpayment?receiptid=<%=rs.getString(1)%>">Papar</a></td>
+                        <td><%=rs.getInt(6)%></td>
                     </tr>
                     
                     <%
                     }
                     %> </table> <%
-                    String sq = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2022-01-01 00:00:00' and datentime <= timestamp '2022-12-31 00:00:00'";
+                    String sq = "select sum(donationvalue) from donation where datentime >= timestamp '2022-01-01 00:00:00' and datentime <= timestamp '2022-12-31 00:00:00'";
                     p = con.prepareStatement(sq);
                     r = p.executeQuery();
                     String total="";
                     while(r.next()){
                     total = r.getString(1);
                     %>
-                    <h1 style="font-color:black">Total Khairat payment RM:<%=total %></h1>
+                    <h1 style="font-color:black">Total sumbangan RM:<%=total %></h1>
                 <%}
                 }
             }

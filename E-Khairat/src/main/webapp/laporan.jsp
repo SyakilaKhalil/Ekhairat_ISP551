@@ -50,13 +50,13 @@
 		<br>
 		<div class="report">
 			<div class="scroll2">
-				<h3>LAPORAN KHAIRAT TAHUNAN</h3>
+				<h3>LAPORAN KEWANGAN TAHUNAN</h3>
 				<br>
 			<form action="paparLaporan2.jsp">
 			<label for="lang">Sila pilih jenis kewangan</label>
 		    <select name="jenis" id="yearinsert">
-		        <option id="yearinsert" value="2020">Bayaran Khairat</option>
-		        <option id="yearinsert" value="2021">Sumbangan</option>
+		        <option id="yearinsert" value="Bayaran Khairat">Bayaran Khairat</option>
+		        <option id="yearinsert" value="Sumbangan">Sumbangan</option>
       		</select>
 		      <label for="lang">Sila pilih tahun</label>
 		    <select name="yearinsert" id="yearinsert">
@@ -86,6 +86,18 @@
 					</li>
 					</div>
 		</div>
+		<div class="report">
+			<div class="scroll2">
+				<h3>PAPAR LAPORAN KEWANGAN KESELURUHAN</h3>
+						<br>
+						<br>
+					<br>
+					<div class="button">
+						<li id="link1">
+						<b><a id="linkin" onclick="window.location.href='paparLaporan3.jsp';">PAPAR LAPORAN</a></b>
+					</li>
+					</div>
+	    </div>
 		</div>
 	</header>
 </body>
