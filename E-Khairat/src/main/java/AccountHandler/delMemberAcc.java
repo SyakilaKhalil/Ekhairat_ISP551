@@ -37,7 +37,7 @@ public class delMemberAcc extends HttpServlet {
         String user = "qekmfhbqusidva";
         String pass = "22cff620d0b06f17950d4f4669a1e0f11f168c04053c0a218b1d83ee130fddb9";
         String memberid= request.getParameter("memberid");
-        String requestaction = "DELETE AKAUN INI";
+        String requestaction = "DIPADAM";
         try {
             Class.forName("org.postgresql.Driver");
             Connection connection = DriverManager.getConnection(dbURL,user,pass);

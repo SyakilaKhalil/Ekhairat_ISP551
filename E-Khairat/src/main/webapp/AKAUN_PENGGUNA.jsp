@@ -108,16 +108,20 @@ td {
     </table>
     <input type="hidden" name="memberid" value="${id}">
     <button type="submit"  class="button button1" name="submit" onclick="form.action='UPDATE_AKAUNPENGGUNA.jsp'">UPDATE</button>
-	<a href='deleteMemberAccount?memberid=${id}' class="btn btn-danger" style= "padding:20px;border-radius:20px;font-size:15px; background-color: #e60000" onclick="ConfirmDelete()">Delete</a>
+	<a href='deleteMemberAccount?memberid=${id}' class="deleteakaun" style= "padding:20px;border-radius:20px;font-size:15px; background-color: #e60000">Delete</a>
 </div>
 </form>
 </div>
 </header>
 
 <script>
-function ConfirmDelete()
-{
-  return confirm("Anda pasti mahu tutup akaun anda? Jika ubah fikiran kemudian, sila hubungi pihak surau");
+
+var elems = document.getElementsByClassName('deleteakaun');
+var confirmIt = function (e) {
+    if (!confirm('Anda pasti mahu padam akaun ini?')) e.preventDefault();
+};
+for (var i = 0, l = elems.length; i < l; i++) {
+    elems[i].addEventListener('click', confirmIt, false);
 }
 
 </script>

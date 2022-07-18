@@ -124,7 +124,7 @@ width:100%;
                 <td>No.K/P: <%=rs.getString(4)%> Nama:<%=rs.getString(5)%></td>
                 <td>RM<%=rs.getString(6)%></td>
                 <td><%=rs.getString(7)%></td>
-                <td><a href='deleteAcceptor?id=<%=rs.getString(1)%>' class="btn btn-danger" style= "padding:6px;border-radius:20px;font-size:15px; background-color: #e60000" onclick="ConfirmDelete()">Delete</a></td>
+                <td><a href='deleteAcceptor?id=<%=rs.getString(1)%>' class="deleteacceptor" style= "padding:6px;border-radius:20px;font-size:15px; background-color: #e60000" >Delete</a></td>
             </tr>
             <%
                 }
@@ -151,7 +151,7 @@ width:100%;
             <%
             
             con = DB.getConnection();
-            String sq = "select memberid, membername, membercontactno, memberaddress, request from khairatmember where request='DELETE AKAUN INI'";
+            String sq = "select memberid, membername, membercontactno, memberaddress, request from khairatmember where request='DIPADAM'";
             ps = con.prepareStatement(sq);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -162,8 +162,7 @@ width:100%;
                 <td><%=rs.getString(3)%></td>
                 <td><%=rs.getString(4)%></td>
                 <td><%=rs.getString(5)%></td>
-                <td><a href='deletemember?memberid=<%=rs.getString(1)%>' class="btn btn-danger" style= "padding:6px;border-radius:20px;font-size:15px; background-color: #e60000" onclick="ConfirmPadam()">Padam Akaun</a>
-                <a href='aktifakaunsemula?memberid=<%=rs.getString(1)%>' class="btn btn-danger" style= "padding:6px;border-radius:20px;font-size:15px; background-color: #C1E1C1" onclick="ConfirmAktif()">Aktifkan Akaun</a></td>
+                <td><a href='aktifakaunsemula?memberid=<%=rs.getString(1)%>' class="activeaccount" style= "padding:6px;border-radius:20px;font-size:15px; background-color: #C1E1C1" >Aktifkan Akaun</a></td>
             </tr>
             <%
                 }
@@ -175,24 +174,58 @@ width:100%;
         
         </div>
 
-
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="modal-container">
+      <h1>Delete Announcement</h1>
+      <p>Are you sure you want to delete these announcement?</p>
+      
+    
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Delete</button>
+      </div>
+    </div>
+  </form>
 
 
 <script>
-function ConfirmPadam()
-{
-  return confirm("Anda pasti untuk padam akaun ini? Akaun ini akan dihapuskan serta merta");
+
+/*//Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == confirm) {
+    modal.style.display = "none";
+  }
+}*/
+
+var elems = document.getElementsByClassName('deleteacceptor');
+var confirmIt = function (e) {
+    if (!confirm('Anda pasti mahu padam maklumat ini?')) e.preventDefault();
+};
+for (var i = 0, l = elems.length; i < l; i++) {
+    elems[i].addEventListener('click', confirmIt, false);
 }
 
-function ConfirmAktif()
-{
-  return confirm("Anda pasti mahukan aktifkan semula akaun ini?");
+var elems = document.getElementsByClassName('deleteaccount');
+var confirmIt = function (e) {
+    if (!confirm('Anda pasti padam akaun ini? Tindakan akan menghapuskan akaun ini serte merta')) e.preventDefault();
+};
+for (var i = 0, l = elems.length; i < l; i++) {
+    elems[i].addEventListener('click', confirmIt, false);
 }
 
-function ConfirmDelete()
-{
-  return confirm("Anda pasti mahu padam penerimaan ini?");
+var elems = document.getElementsByClassName('activeaccount');
+var confirmIt = function (e) {
+    if (!confirm('Anda pasti mahu aktifkan semula akaun ini?')) e.preventDefault();
+};
+for (var i = 0, l = elems.length; i < l; i++) {
+    elems[i].addEventListener('click', confirmIt, false);
 }
+
 </script>
 </body>
 </html>

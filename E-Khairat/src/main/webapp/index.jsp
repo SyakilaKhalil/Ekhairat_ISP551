@@ -37,7 +37,7 @@
 	<script type="text/javascript">
 		var status = document.getElementById("status").value;
 		if(status == "failed"){
-			alert("Nombor Kad Pengenalan atau kata laluan anda salah ATAU akaun anda telah disenarai lupus");
+			alert("Nombor Kad Pengenalan atau kata laluan anda salah ATAU akaun anda telah disenarai lupus. Sila berhubung +0345210215 untuk aktifkan semula akaun");
 		}
 	</script>
 </body>

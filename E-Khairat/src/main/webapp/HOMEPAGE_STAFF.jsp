@@ -94,7 +94,7 @@ width:80%;
             	<td><%=rs.getTimestamp(1)%></td>
                 <td><%=rs.getString(2)%></td>
                 <td><%=rs.getString(4)%></td>
-                <td><a href='deleteAnnouncement?id=<%=rs.getString(5)%>' class="btn btn-danger" style= "padding:20px;border-radius:20px;font-size:15px; background-color: #e60000" onclick="ConfirmDelete()">Padam Pengumuman</a></td>
+                <td><a href='deleteAnnouncement?id=<%=rs.getString(5)%>' class="deleteannounce" style= "padding:20px;border-radius:20px;font-size:15px; background-color: #e60000">Padam Pengumuman</a></td>
             </tr>
             <%
                 }
@@ -111,9 +111,13 @@ width:80%;
 			<br>
     </header>
 <script>
-function ConfirmDelete()
-{
-  return confirm("Anda pasti mahu padam kandungan ini?");
+
+var elems = document.getElementsByClassName('deleteannounce');
+var confirmIt = function (e) {
+    if (!confirm('Anda pasti mahu padam pengumuman ini?')) e.preventDefault();
+};
+for (var i = 0, l = elems.length; i < l; i++) {
+    elems[i].addEventListener('click', confirmIt, false);
 }
 
 </script>

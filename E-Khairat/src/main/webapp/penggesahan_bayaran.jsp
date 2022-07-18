@@ -73,7 +73,7 @@
                 <td><%=rs.getString(3)%></td>
                 <td><%=rs.getTimestamp(4)%></td>
                 <td><a href="displaykhairatpayment?receiptid=<%=rs.getString(1)%>">Papar</a></td>
-                <td><a href="updatestatusbayaran?receiptid=<%=rs.getString(1)%>"onclick="ConfirmDelete()">Sahkan Bayaran</a></td>
+                <td><a href="updatestatusbayaran?receiptid=<%=rs.getString(1)%>" class="sahbayaran">Sahkan Bayaran</a></td>
             </tr>
             <%
             	}
@@ -85,10 +85,15 @@
 </div>
     </header>
     <script>
-function ConfirmDelete()
-{
-  return confirm("Anda pasti untuk detail adalah benar?");
-}
+    
+    var elems = document.getElementsByClassName('sahbayaran');
+    var confirmIt = function (e) {
+        if (!confirm('Anda pasti mahu sahkan bayaran ini?')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
+
 
 </script>
 </body>

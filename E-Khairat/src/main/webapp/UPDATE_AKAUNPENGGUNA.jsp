@@ -171,12 +171,23 @@ td {
 
 
     	<input type="hidden" name="action" value="updateKhairatmember">
-        <button type="submit" class="button button1" name="submit" >Submit</button><br><br>
+        <button type="submit" class="button button1 updateakaun" name="submit" >Submit</button><br><br>
 
 
 </div>
 </form>
 </div>
 </header>
+<script>
+
+var elems = document.getElementsByClassName('updateakaun');
+var confirmIt = function (e) {
+    if (!confirm('Anda pasti semua maklumat dimasukkan adalah benar?')) e.preventDefault();
+};
+for (var i = 0, l = elems.length; i < l; i++) {
+    elems[i].addEventListener('click', confirmIt, false);
+}
+
+</script>
 </body>
 </html>
