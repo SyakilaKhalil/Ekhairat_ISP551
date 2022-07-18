@@ -94,7 +94,7 @@ width:80%;
             	<td><%=rs.getTimestamp(1)%></td>
                 <td><%=rs.getString(2)%></td>
                 <td><%=rs.getString(4)%></td>
-                <td><a href='deleteAnnouncement?id=<%=rs.getString(5)%>' class="deleteannounce" style= "padding:20px;border-radius:20px;font-size:15px; background-color: #e60000">Padam Pengumuman</a></td>
+                <td><a href='deleteAnnouncement?id=<%=rs.getString(5)%>' class="deleteannounce" style= "padding:10px;border-radius:20px;font-size:15px; background-color: #e60000">Padam Pengumuman</a></td>
             </tr>
             <%
                 }

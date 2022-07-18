@@ -5,6 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+body{
+text-align:center;
+background-color: #ffe699;
+}
+</style>
 </head>
 <body>
 <h1>AKAUN ANDA TELAH DITUTUP. UNTUK MEMBUKA SEMULA AKAUN ANDA. SILA BERHUBUNG BERSAMA PIHAK SURAU</h1>
