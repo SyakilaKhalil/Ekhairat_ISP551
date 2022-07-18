@@ -53,6 +53,11 @@
 				<h3>LAPORAN KHAIRAT TAHUNAN</h3>
 				<br>
 			<form action="paparLaporan2.jsp">
+			<label for="lang">Sila pilih jenis kewangan</label>
+		    <select name="jenis" id="yearinsert">
+		        <option id="yearinsert" value="2020">Bayaran Khairat</option>
+		        <option id="yearinsert" value="2021">Sumbangan</option>
+      		</select>
 		      <label for="lang">Sila pilih tahun</label>
 		    <select name="yearinsert" id="yearinsert">
 		        <option id="yearinsert" value="2020">2020</option>

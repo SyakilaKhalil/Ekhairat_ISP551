@@ -90,16 +90,18 @@ font-size:28;
 
             <%
            // DateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
+            String jenis = request.getParameter("jenis");
+            System.out.println(jenis);
             String year = request.getParameter("yearinsert");
             System.out.println(year);
             //String dates = year+"/01/01 00:00:00.000";
             //String datee = year+"/12/31 00:00:00.000";
             //Date datestart = df.parse(dates);
             //Date dateend = df.parse(datee);
-            
+            if(jenis.equalsIgnoreCase("Bayaran Khairat")){
             if (year.equalsIgnoreCase("2020")){
             	con = DB.getConnection();
-            	String sql = "select receiptid, memberid, membername, datentime, status from khairatpayment join khairatmember using (memberid) where datentime >= timestamp '2020-01-01 00:00:00' and datentime <= timestamp '2020-12-31 00:00:00'";
+            	String sql = "select receiptid, memberid, membername, datentime, status, paymentdetail from khairatpayment join khairatmember using (memberid) where datentime >= timestamp '2020-01-01 00:00:00' and datentime <= timestamp '2020-12-31 00:00:00'";
                 ps = con.prepareStatement(sql);
                 rs = ps.executeQuery();
                 %> <table border="2">
@@ -113,25 +115,35 @@ font-size:28;
                     <td><%=rs.getString(2)%></td>
                     <td><%=rs.getString(3)%></td>
                     <td><%=rs.getTimestamp(4)%></td>
+                    <td><a href="displaykhairatpayment?receiptid=<%=rs.getString(1)%>">Papar</a></td>
                     <td><%=rs.getString(5)%></td>
                 </tr>
                 
                 <%
                 }
                 %> </table> <%
-                String sq = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2020-01-01 00:00:00' and datentime <= timestamp '2020-12-31 00:00:00'";
+                String sq = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2020-01-01 00:00:00' and datentime <= timestamp '2020-12-31 00:00:00' and status='Disahkan'";
+                p = con.prepareStatement(sq);
+                r = p.executeQuery();
+                String totalsah="";
+                while(r.next()){
+                totalsah = r.getString(1);
+                %>
+                <h1 style="font-color:black">Total Khairat Disahkan payment RM<%=totalsah %></h1>
+            <%}
+                String s = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2021-01-01 00:00:00' and datentime <= timestamp '2021-12-31 00:00:00' and status='Pending'";
                 p = con.prepareStatement(sq);
                 r = p.executeQuery();
                 String total="";
                 while(r.next()){
                 total = r.getString(1);
                 %>
-                <h1 style="font-color:black">Total Khairat payment RM:<%=total %></h1>
+                <h1 style="font-color:black">Total Khairat Belum Disahkan payment RM:<%=total %></h1>
             <%}
                 
             }else if(year.equalsIgnoreCase("2021")){
             	con = DB.getConnection();
-            	String sql = "select receiptid, memberid, membername, datentime, status from khairatpayment join khairatmember using (memberid) where datentime >= timestamp '2021-01-01 00:00:00' and datentime <= timestamp '2021-12-31 00:00:00'";
+            	String sql = "select receiptid, memberid, membername, datentime, status, paymentdetail from khairatpayment join khairatmember using (memberid) where datentime >= timestamp '2021-01-01 00:00:00' and datentime <= timestamp '2021-12-31 00:00:00'";
                 ps = con.prepareStatement(sql);
                 rs = ps.executeQuery();
                 %> <table border="2">
@@ -145,6 +157,7 @@ font-size:28;
                     <td><%=rs.getString(2)%></td>
                     <td><%=rs.getString(3)%></td>
                     <td><%=rs.getTimestamp(4)%></td>
+                    <td><a href="displaykhairatpayment?receiptid=<%=rs.getString(1)%>">Papar</a></td>
                     <td><%=rs.getString(5)%></td>
                 </tr>
                 
@@ -163,7 +176,7 @@ font-size:28;
        
             }else if(year.equalsIgnoreCase("2022")){
             	con = DB.getConnection();
-            	String sql = "select receiptid, memberid, membername, datentime, status from khairatpayment join khairatmember using (memberid) where datentime >= timestamp '2022-01-01 00:00:00' and datentime <= timestamp '2022-12-31 00:00:00'";
+            	String sql = "select receiptid, memberid, membername, datentime, status, paymentdetail from khairatpayment join khairatmember using (memberid) where datentime >= timestamp '2022-01-01 00:00:00' and datentime <= timestamp '2022-12-31 00:00:00'";
                 ps = con.prepareStatement(sql);
                 rs = ps.executeQuery();
                 %> <table border="2">
@@ -177,6 +190,7 @@ font-size:28;
                     <td><%=rs.getString(2)%></td>
                     <td><%=rs.getString(3)%></td>
                     <td><%=rs.getTimestamp(4)%></td>
+                    <td><a href="displaykhairatpayment?receiptid=<%=rs.getString(1)%>">Papar</a></td>
                     <td><%=rs.getString(5)%></td>
                 </tr>
                 
@@ -192,6 +206,104 @@ font-size:28;
                 %>
                 <h1 style="font-color:black">Total Khairat payment RM:<%=total %></h1>
             <%}
+            }}
+            else if(jenis.equalsIgnoreCase("Sumbangan")){
+            	if (year.equalsIgnoreCase("2020")){
+                	con = DB.getConnection();
+                	String sql = "select receiptid, memberid, membername, datentime, status from donation join khairatmember using (memberid) where datentime >= timestamp '2020-01-01 00:00:00' and datentime <= timestamp '2020-12-31 00:00:00'";
+                    ps = con.prepareStatement(sql);
+                    rs = ps.executeQuery();
+                    %> <table border="2">
+                	<tr>
+                    <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Status Bayaran</th>
+                	</tr> <%
+                    while (rs.next()) {
+                    %>
+                    <tr>
+                    	<td><%=rs.getString(1)%></td>
+                        <td><%=rs.getString(2)%></td>
+                        <td><%=rs.getString(3)%></td>
+                        <td><%=rs.getTimestamp(4)%></td>
+                        <td><%=rs.getString(5)%></td>
+                    </tr>
+                    
+                    <%
+                    }
+                    %> </table> <%
+                    String sq = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2020-01-01 00:00:00' and datentime <= timestamp '2020-12-31 00:00:00'";
+                    p = con.prepareStatement(sq);
+                    r = p.executeQuery();
+                    String total="";
+                    while(r.next()){
+                    total = r.getString(1);
+                    %>
+                    <h1 style="font-color:black">Total Khairat payment RM:<%=total %></h1>
+                <%}
+                    
+                }else if(year.equalsIgnoreCase("2021")){
+                	con = DB.getConnection();
+                	String sql = "select receiptid, memberid, membername, datentime, status from khairatpayment join khairatmember using (memberid) where datentime >= timestamp '2021-01-01 00:00:00' and datentime <= timestamp '2021-12-31 00:00:00'";
+                    ps = con.prepareStatement(sql);
+                    rs = ps.executeQuery();
+                    %> <table border="2">
+                	<tr>
+                    <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Status Bayaran</th>
+                	</tr> <%
+                    while (rs.next()) {
+                    %>
+                    <tr>
+                    	<td><%=rs.getString(1)%></td>
+                        <td><%=rs.getString(2)%></td>
+                        <td><%=rs.getString(3)%></td>
+                        <td><%=rs.getTimestamp(4)%></td>
+                        <td><%=rs.getString(5)%></td>
+                    </tr>
+                    
+                    <%
+                    }
+                    %> </table> <%
+                    String sq = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2021-01-01 00:00:00' and datentime <= timestamp '2021-12-31 00:00:00'";
+                    p = con.prepareStatement(sq);
+                    r = p.executeQuery();
+                    String total="";
+                    while(r.next()){
+                    total = r.getString(1);
+                    %>
+                    <h1 style="font-color:black">Total Khairat payment RM:<%=total %></h1>
+                <%}
+           
+                }else if(year.equalsIgnoreCase("2022")){
+                	con = DB.getConnection();
+                	String sql = "select receiptid, memberid, membername, datentime, status from khairatpayment join khairatmember using (memberid) where datentime >= timestamp '2022-01-01 00:00:00' and datentime <= timestamp '2022-12-31 00:00:00'";
+                    ps = con.prepareStatement(sql);
+                    rs = ps.executeQuery();
+                    %> <table border="2">
+                	<tr>
+                    <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Status Bayaran</th>
+                	</tr> <%
+                    while (rs.next()) {
+                    %>
+                    <tr>
+                    	<td><%=rs.getString(1)%></td>
+                        <td><%=rs.getString(2)%></td>
+                        <td><%=rs.getString(3)%></td>
+                        <td><%=rs.getTimestamp(4)%></td>
+                        <td><%=rs.getString(5)%></td>
+                    </tr>
+                    
+                    <%
+                    }
+                    %> </table> <%
+                    String sq = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2022-01-01 00:00:00' and datentime <= timestamp '2022-12-31 00:00:00'";
+                    p = con.prepareStatement(sq);
+                    r = p.executeQuery();
+                    String total="";
+                    while(r.next()){
+                    total = r.getString(1);
+                    %>
+                    <h1 style="font-color:black">Total Khairat payment RM:<%=total %></h1>
+                <%}
+                }
             }
             %>
             
