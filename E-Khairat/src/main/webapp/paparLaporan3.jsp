@@ -90,7 +90,7 @@ font-size:28;
         <div class="infoSemasa">
         <table border="2">
                 	<tr>
-                    <th>TOTAL PEMBAYARAN KHAIRAT TELAH DISAHKAN</th><th>TOTAL PEMBAYARAN KHAIRAT BELUM DISAHKAN</th><th>TOTAL SUMBANGAN</th><th>TOTAL PEMBERIAN KHAIRAT</th><th>JUMLAH WANG SEMASA</th>
+                    <th>TOTAL PEMBAYARAN KHAIRAT TELAH DISAHKAN</th><th>TOTAL PEMBAYARAN KHAIRAT BELUM DISAHKAN</th><th>TOTAL SUMBANGAN</th><th>TOTAL PEMBERIAN KHAIRAT</th>
                 	</tr>
 
             <%
@@ -139,10 +139,8 @@ font-size:28;
                 <td style="font-color:red">RM<%=totalacceptor %></td>
                 
             <% }
-               String totalseluruh = totalacceptor + totaldonate + total + totalsah;
                 %>
-        		<td>RM<%=totalseluruh%></td>
-        		</tr>
+        		
 			
 			</table>
 			</div>
