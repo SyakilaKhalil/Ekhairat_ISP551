@@ -63,7 +63,7 @@ public class updateStaffAccount extends HttpServlet {
 				
 				HttpSession session = request.getSession();
 				String staffNAME = request.getParameter("name");
-				String staffID = request.getParameter("id");
+				String staffID = request.getParameter("staffid");
 				String staffCONTACTNO = request.getParameter("contact");
 				String staffADDRESS = request.getParameter("address");
 				String staffEMAIL = request.getParameter("email");
@@ -79,13 +79,11 @@ public class updateStaffAccount extends HttpServlet {
 				sd.updateKhairatstaff(sta);
 				
 				session.removeAttribute("name");
-				session.removeAttribute("id");
 				session.removeAttribute("contact");
 				session.removeAttribute("email");
 				session.removeAttribute("password");
 				
 				session.setAttribute("name", staffNAME);
-				session.setAttribute("id", staffID);
 				session.setAttribute("contact", staffCONTACTNO);
 				session.setAttribute("address" , staffADDRESS);
 				session.setAttribute("email" , staffEMAIL);

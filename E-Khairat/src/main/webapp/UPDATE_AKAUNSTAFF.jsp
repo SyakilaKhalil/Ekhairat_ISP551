@@ -89,7 +89,7 @@ td {
 
 <div class="container" style="height: auto">
 
-    <input type=hidden name="memberid"  value="${id}" >
+    <input type=hidden name="staffid"  value="${id}" >
         <table>
     
     	<tr>
@@ -99,7 +99,7 @@ td {
     	
     	<tr>
     	<th>NOMBOR KAD PENGENALAN:</th>
-    	<td><input type="text" name="id" value="${id}"></td>
+    	<td>${id}</td>
     	</tr>
     	
     	<tr>
@@ -119,7 +119,7 @@ td {
     	
     	<tr>
     	<th>PASSWORD:</th>
-    	<td><input type="password" name="password" value="${password}"></td>
+    	<td><input type="text" name="password" value="${password}"></td>
     	
     	</tr>
     	

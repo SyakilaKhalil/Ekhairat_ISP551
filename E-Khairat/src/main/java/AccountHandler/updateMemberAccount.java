@@ -48,7 +48,7 @@ public class updateMemberAccount extends HttpServlet {
 			
 			HttpSession session = request.getSession();
 			String memberNAME = request.getParameter("name");
-			String memberID = request.getParameter("id");
+			String memberID = request.getParameter("memberid");
 			String memberCONTACTNO = request.getParameter("contact");
 			String memberADDRESS = request.getParameter("address");
 			String memberEMAIL = request.getParameter("email");
@@ -65,14 +65,12 @@ public class updateMemberAccount extends HttpServlet {
 			rd.updateKhairatmember(mem);
 			
 			session.removeAttribute("name");
-			session.removeAttribute("id");
 			session.removeAttribute("contact");
 			session.removeAttribute("address");
 			session.removeAttribute("email");
 			session.removeAttribute("password");
 			
 			session.setAttribute("name", memberNAME);
-			session.setAttribute("id", memberID);
 			session.setAttribute("contact", memberCONTACTNO);
 			session.setAttribute("address" , memberADDRESS);
 			session.setAttribute("email" , memberEMAIL);

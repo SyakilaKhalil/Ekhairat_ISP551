@@ -90,7 +90,7 @@ font-size:28;
         <div class="infoSemasa">
         <table border="2">
                 	<tr>
-                    <th>TOTAL PEMBAYARAN KHAIRAT TELAH DISAHKAN</th><th>TOTAL PEMBAYARAN KHAIRAT BELUM DISAHKAN</th><th>TOTAL SUMBANGAN</th>
+                    <th>TOTAL PEMBAYARAN KHAIRAT TELAH DISAHKAN</th><th>TOTAL PEMBAYARAN KHAIRAT BELUM DISAHKAN</th><th>TOTAL SUMBANGAN</th><th>TOTAL PEMBERIAN KHAIRAT</th><th>JUMLAH WANG SEMASA</th>
                 	</tr>
 
             <%
@@ -125,11 +125,24 @@ font-size:28;
                 totaldonate = rs.getString(1);
                 %>
                 <td style="font-color:black">RM<%=totaldonate %></td>
-                </tr>
+                
             <%
             } 
-            %>
-        
+                connection = DB.getConnection();
+            	String sqa = "select sum(donationvalue) from donation";
+                ps = connection.prepareStatement(sqa);
+                rs = ps.executeQuery();
+                String totalacceptor="";
+                while(rs.next()){
+                totalacceptor = rs.getString(1);
+                %>
+                <td style="font-color:red">RM<%=totalacceptor %></td>
+                
+            <% }
+               String totalseluruh = totalacceptor + totaldonate + total + totalsah;
+                %>
+        		<td>RM<%=totalseluruh%></td>
+        		</tr>
 			
 			</table>
 			</div>

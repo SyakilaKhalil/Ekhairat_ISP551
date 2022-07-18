@@ -113,12 +113,6 @@ td {
     	<td>${email}</td>
     	</tr>
     	
-    	<tr>
-    	<th>PASSWORD:</th>
-    	<td>${password}</td>
-    	
-    	</tr>
-    	
     </table>
     <input type="hidden" name="action" value="delete">
      <button type="submit"  class="button button1" name="submit" onclick="form.action='UPDATE_AKAUNSTAFF.jsp'">UPDATE</button>

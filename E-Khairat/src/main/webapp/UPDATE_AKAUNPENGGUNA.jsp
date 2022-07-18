@@ -94,7 +94,7 @@ td {
     	
     	<tr>
     	<th>NOMBOR KAD PENGENALAN:</th>
-    	<td><input type="text" name="id" value="${id}"></td>
+    	<td>${id}</td>
     	</tr>
     	
     	<tr>
@@ -114,62 +114,11 @@ td {
     	
     	<tr>
     	<th>PASSWORD:</th>
-    	<td><input type="password" name="password" value="${password}"></td>
-    	
+    	<td><input type="text" name="password" value="${password}"></td>
     	</tr>
     	
     </table>
-
-<%--    <div class="row">
-        <div class="col-25">
-            <label>NAMA</label>
-        </div>
-        <div class="col-75">
-            <input type="text" name="name" value="${name}">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-25">
-            <label>NOMBOR KAD PENGENALAN</label>
-        </div>
-        <div class="col-75">
-            <input type="text" name="id" value="${id}">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-25">
-            <label>NOMBOR TELEFON</label>
-        </div>
-        <div class="col-75">
-            <input type="tel" name="contact" value="${contact}">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-25">
-            <label>ALAMAT</label>
-        </div>
-        <div class="col-75">
-            <input type="text" name="address" value="${address}">
-        </div>
-        </div>
-    <div class="row">
-        <div class="col-25">
-            <label>EMAIL</label>
-        </div>
-        <div class="col-75">
-            <input type="email" name="email" value="${email}">
-        </div>
-        </div>
-    <div class="row">
-        <div class="col-25">
-            <label>PASSWORD</label>
-        </div>
-        <div class="col-75">
-            <input type="password" name="password" value="${password}">
-        </div>
-        </div> --%>
-
-
+    
     	<input type="hidden" name="action" value="updateKhairatmember">
         <button type="submit" class="button button1 updateakaun" name="submit" >Submit</button><br><br>
 
