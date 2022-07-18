@@ -31,10 +31,7 @@ width:80%;
   border-radius: 1em;
   overflow: hidden;
 }
-h1{
-font-color:black;
-font-size:28;
-}
+
 </style>
 <body>
 <%
@@ -131,7 +128,7 @@ font-size:28;
                 while(r.next()){
                 totalsah = r.getString(1);
                 %>
-                <h1 style="font-color:black">Total Khairat Disahkan payment RM<%=totalsah %></h1>
+                <p style="font-color:black, font-size:30px">Total Khairat Disahkan payment RM<%=totalsah %></p>
             <%}
                 String s = "select sum(paymentvalue) from khairatpayment where datentime >= timestamp '2020-01-01 00:00:00' and datentime <= timestamp '2020-12-31 00:00:00' and status='Pending'";
             	a = con.prepareStatement(s);
