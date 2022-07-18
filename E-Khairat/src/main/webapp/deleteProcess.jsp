@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 <style>
 body{
-background-color:#ffe699;
 text-align:center;
+background-color: #ffe699;
 }
 </style>
 </head>
