@@ -140,7 +140,7 @@ width:100%;
 </header>
 <div class="info">
         <h1>
-             SENARAI AHLI YANG MAHU AKAUN MEREKA DIHAPUSKAN
+             SENARAI AHLI AKAUN DIAKTIF
         </h1>
         <form action="uploadkhairatpayment" method="post">
         <input type=hidden name="staffid"  value="${staffid}">
