@@ -67,7 +67,7 @@ width:100%;
         %>
 <form action="createNewAcceptor" method="post">
                         <select name="memberid" onchange="document.getElementById('vid').value=this.option[this.selectedIndex].text">
-                            <option>Select One</option>
+                            <option>Pilih Satu</option>
                    <%
                    connection = DB.getConnection();
                    stmt=connection.prepareStatement("Select memberid, membername from khairatmember order by memberid");
@@ -81,12 +81,14 @@ width:100%;
  						}
                      %>
                         </select>
-                     
+                     <br>
                     
                     <label class="" for="acceptorvalue">Jumlah Pemberian</label>
 					<input class = "" type="number" id="acceptorvalue" name="acceptorvalue" placeholder = "Jumlah Pemberian" required>
+					<br>
                     <label for="acceptornote">Catatan Penerima</label>
 					<textarea rows = "5" cols = "60" id="acceptornote" name="acceptornote" placeholder = "Sila tulis catatan penerimaan khairat..."></textarea>
+					<br>
 					<input type="hidden" name="action" value="createAcceptor">
 					<button type="submit" name="submit">Cipta Penerima</button>
 </form>
@@ -173,21 +175,6 @@ width:100%;
         </form>
         
         </div>
-
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-  <form class="modal-content" action="/action_page.php">
-    <div class="modal-container">
-      <h1>Delete Announcement</h1>
-      <p>Are you sure you want to delete these announcement?</p>
-      
-    
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Delete</button>
-      </div>
-    </div>
-  </form>
 
 
 <script>
