@@ -66,7 +66,7 @@ font-size:36px;
         <input type=hidden name="memberID"  value="${memberID}">
         <table border="2">
             <tr>
-                <th>Member KP</th><th>Tarikh Dan Masa</th><th>Status Bayaran</th><th>Papar Resit Transaksi</th>
+                <th>Nombor K/P</th><th>Tarikh Dan Masa</th><th>Status Bayaran</th><th>Papar Resit Transaksi</th>
             </tr>
             <%
             String memberid =(String)session.getAttribute("id");

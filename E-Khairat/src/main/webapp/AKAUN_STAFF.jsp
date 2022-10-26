@@ -115,7 +115,7 @@ td {
     	
     </table>
     <input type="hidden" name="action" value="delete">
-     <button type="submit"  class="button button1" name="submit" onclick="form.action='UPDATE_AKAUNSTAFF.jsp'">UPDATE</button>
+     <button type="submit"  class="button button1" name="submit" onclick="form.action='UPDATE_AKAUNSTAFF.jsp'">KEMASKINI</button>
 </div>
 </form>
 </div>

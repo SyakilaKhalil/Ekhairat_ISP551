@@ -56,7 +56,7 @@
         <input type=hidden name="id"  value="${id}">
         <table border="2">
             <tr>
-                <th>ResitID</th><th>MemberID</th><th>Member Name</th><th>Tarikh dan Masa Bayaran</th><th>Papar Resit Transaksi</th><th>Sahkan Bayaran</th>
+                <th>Resit ID</th><th>ID Ahli</th><th>Nama Ahli</th><th>Tarikh dan Masa Bayaran</th><th>Papar Resit Transaksi</th><th>Sahkan Bayaran</th>
             </tr>
             <%
             String id;

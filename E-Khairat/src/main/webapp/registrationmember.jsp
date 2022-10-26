@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Registration For Member</title>
+	<title>PENDAFTARAN AHLI BAHARU</title>
 	<link rel="stylesheet" href="registration.css">
 	<script src="registration.js"></script>
 </head>

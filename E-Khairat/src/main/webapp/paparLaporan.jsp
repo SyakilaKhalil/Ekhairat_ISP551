@@ -77,7 +77,7 @@ width:80%;
         <div class="infoSemasa">
         <table border="2">
             <tr>
-                <th>Nama</th><th>Nombor KP</th><th>No Telefon</th><th>Email</th><th>Address</th>
+                <th>Nama</th><th>Nombor KP</th><th>No Telefon</th><th>Email</th><th>Alamat</th>
                 
             </tr>
             <%

@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Registration For Staff</title>
+	<title>PENDAFTARAN STAFF BAHARU</title>
 	<link rel="stylesheet" href="registration.css">
 	<script src="registration.js"></script>
 </head>

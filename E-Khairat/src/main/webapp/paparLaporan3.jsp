@@ -90,7 +90,7 @@ font-size:28;
         <div class="infoSemasa">
         <table border="2">
                 	<tr>
-                    <th>TOTAL PEMBAYARAN KHAIRAT TELAH DISAHKAN</th><th>TOTAL PEMBAYARAN KHAIRAT BELUM DISAHKAN</th><th>TOTAL SUMBANGAN</th><th>TOTAL PEMBERIAN KHAIRAT</th>
+                    <th>JUMLAH PEMBAYARAN KHAIRAT TELAH DISAHKAN</th><th>JUMLAH PEMBAYARAN KHAIRAT BELUM DISAHKAN</th><th>JUMLAH SUMBANGAN</th><th>JUMLAH PEMBERIAN KHAIRAT</th>
                 	</tr>
 
             <%

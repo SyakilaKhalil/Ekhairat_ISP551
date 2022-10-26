@@ -105,7 +105,7 @@ width:80%;
                 rs = ps.executeQuery();
                 %> <table border="2">
             	<tr>
-                <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Status</th>
+                <th>Resit ID</th><th>Nombor K/P</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Status</th>
             	</tr> <%
                 while (rs.next()) {
                 %>
@@ -147,7 +147,7 @@ width:80%;
                 rs = ps.executeQuery();
                 %> <table border="2">
             	<tr>
-                <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Status Bayaran</th>
+                <th>Resit ID</th><th>Nombor K/P</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Status Bayaran</th>
             	</tr> <%
                 while (rs.next()) {
                 %>
@@ -189,7 +189,7 @@ width:80%;
                 rs = ps.executeQuery();
                 %> <table border="2">
             	<tr>
-                <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Status Bayaran</th>
+                <th>Resit ID</th><th>Nombor K/P</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Status Bayaran</th>
             	</tr> <%
                 while (rs.next()) {
                 %>
@@ -231,7 +231,7 @@ width:80%;
                     rs = ps.executeQuery();
                     %> <table border="2">
                 	<tr>
-                    <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Jumlah Sumbangan</th>
+                    <th>Resit ID</th><th>Nombor K/P</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Jumlah Sumbangan</th>
                 	</tr> <%
                     while (rs.next()) {
                     %>
@@ -264,7 +264,7 @@ width:80%;
                     rs = ps.executeQuery();
                     %> <table border="2">
                 	<tr>
-                    <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Jumlah Sumbangan</th>
+                    <th>Resit ID</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Jumlah Sumbangan</th>
                 	</tr> <%
                     while (rs.next()) {
                     %>
@@ -297,7 +297,7 @@ width:80%;
                     rs = ps.executeQuery();
                     %> <table border="2">
                 	<tr>
-                    <th>Receiptid</th><th>Nombor KP</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Jumlah Sumbangan</th>
+                    <th>Resit ID</th><th>Nombor K/P</th><th>Nama</th><th>Tarikh dan Masa</th><th>Resit Transaksi</th><th>Jumlah Sumbangan</th>
                 	</tr> <%
                     while (rs.next()) {
                     %>
