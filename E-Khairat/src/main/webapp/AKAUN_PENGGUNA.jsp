@@ -108,7 +108,7 @@ td {
     </table>
     <input type="hidden" name="memberid" value="${id}">
     <button type="submit"  class="button button1" name="submit" onclick="form.action='UPDATE_AKAUNPENGGUNA.jsp'">KEMASKINI</button>
-	<a href='deleteMemberAccount?memberid=${id}' class="deleteakaun" style= "padding:10px;border-radius:15px;font-size:18px; background-color: #e60000">DIAKTIF</a>
+	<a href='deleteMemberAccount?memberid=${id}' class="deleteakaun" style= "padding:10px;border-radius:15px;font-size:18px; background-color: #e60000">NYAHAKTIF</a>
 </div>
 </form>
 </div>

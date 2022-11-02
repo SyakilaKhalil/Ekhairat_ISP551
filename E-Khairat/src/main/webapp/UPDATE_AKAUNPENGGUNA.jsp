@@ -113,7 +113,7 @@ td {
     	</tr>
     	
     	<tr>
-    	<th>PASSWORD:</th>
+    	<th>KATA LALUAN:</th>
     	<td><input type="text" name="password" value="${password}"></td>
     	</tr>
     	
