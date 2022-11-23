@@ -38,7 +38,7 @@
 		var status = document.getElementById("status").value;
 		if(status == "failed"){
 			//swal("Sorry","Wrong username or password","failed");
-			alert("Wrong email or password");
+			alert("! ! Email atau kata laluan dimasukkan adalah salah ! !");
 		}
 	</script>
 </body>

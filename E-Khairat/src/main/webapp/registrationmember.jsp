@@ -54,14 +54,14 @@
   							<input name="memberPassword" id="password" type="password" onkeyup='check();' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
   							title="Mesti mengandungi sekurang-kurangnya satu nombor dan satu huruf besar dan huruf kecil, dan sekurang-kurangnya 8 atau lebih karakter." />
 							<br>
-							<input type = "checkbox" id="passlabel"  onclick="passwordtoogle()">Papar Katalaluan
+							<input type = "checkbox" id="passlabel"  onclick="passwordtoogle()">Papar Kata laluan
 							 <p class = "extratext"></p>
 							<br> 
 							<label class="regis"> Masukkan Kata Laluan Semula </label>
   							<input type="password" name="confirm_password" id="confirm_password"  onkeyup='check();' /> 
   							<span id='message'></span>
   							<br>
-							<input type = "checkbox" id="passlabel" onclick="passwordconfirmtoogle()">Papar Katalaluan
+							<input type = "checkbox" id="passlabel" onclick="passwordconfirmtoogle()">Papar Kata laluan
 							 <p class = "extratext">
 							 
 				 

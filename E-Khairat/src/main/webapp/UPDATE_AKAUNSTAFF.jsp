@@ -176,7 +176,7 @@ td {
 
 
     	<input type="hidden" name="action" value="updateKhairatstaff">
-        <button type="submit" class="button button1 updateakaunstaff" name="submit" >Submit</button><br><br>
+        <button type="submit" class="button button1 updateakaunstaff" name="submit" >HANTAR</button><br><br>
 
 
 </div>

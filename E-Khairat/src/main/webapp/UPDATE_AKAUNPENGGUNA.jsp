@@ -120,7 +120,7 @@ td {
     </table>
     
     	<input type="hidden" name="action" value="updateKhairatmember">
-        <button type="submit" class="button button1 updateakaun" name="submit" >Submit</button><br><br>
+        <button type="submit" class="button button1 updateakaun" name="submit" >HANTAR</button><br><br>
 
 
 </div>

@@ -126,7 +126,7 @@ width:100%;
                 <td>No.K/P: <%=rs.getString(4)%> Nama:<%=rs.getString(5)%></td>
                 <td>RM<%=rs.getString(6)%></td>
                 <td><%=rs.getString(7)%></td>
-                <td><a href='deleteAcceptor?id=<%=rs.getString(1)%>' class="deleteacceptor" style= "padding:6px;border-radius:20px;font-size:15px; background-color: #e60000" >Delete</a></td>
+                <td><a href='deleteAcceptor?id=<%=rs.getString(1)%>' class="deleteacceptor" style= "padding:6px;border-radius:20px;font-size:15px; background-color: #e60000" >PADAM</a></td>
             </tr>
             <%
                 }
@@ -147,7 +147,7 @@ width:100%;
         <div class="infoSemasa">
         <table border="2">
             <tr>
-                <th>memberid</th><th>membername</th><th>membercontactno</th><th>memberaddress</th><th>status</th>
+                <th>Nombor K/P</th><th>Nama</th><th>No Telefon</th><th>Alamat</th><th>status</th>
                 
             </tr>
             <%
